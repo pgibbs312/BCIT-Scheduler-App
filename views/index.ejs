@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexStyle.css">
+    
     <title>BCIT Study Room Scheduler</title>
+    <script>
+        const calendar = docuemnt.querySelector("#app-calendar");
+         for (let day = 1; day < 31; day++) {
+             console.log(day);
+             calendar.insertAdjacentHTML("beforeend", `<div class="day">${day}</div`);
+         }
+    </script>
 </head>
 <body>
-    <h1>Welcome!</h1>
+   <div id="app-calendar"></div>
 </body>
 </html>

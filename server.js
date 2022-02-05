@@ -41,7 +41,6 @@ app.use((req, res, next) => {
 
 // Defining the routes here
 
-app.use("/", indexRoute);
 app.use("/auth", authRoute)
 
 app.listen(port, () => {
