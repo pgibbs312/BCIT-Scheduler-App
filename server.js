@@ -40,8 +40,8 @@ app.use((req, res, next) => {
 });
 
 // Defining the routes here
-
-app.use("/auth", authRoute)
+app.use("/", indexRoute);
+app.use("/auth", authRoute);
 
 app.listen(port, () => {
     console.log(`Server has started on port ${port}`);
