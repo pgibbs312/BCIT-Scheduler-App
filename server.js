@@ -43,8 +43,12 @@ app.use((req, res, next) => {
 app.use("/", indexRoute);
 app.use("/auth", authRoute);
 
-app.listen(port, () => {
-    console.log(`Server has started on port ${port}`);
-});
+const databaseURL = 'mongodb+srv://admin:132435!Awowds@cluster0.ega31.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+mongoose.connect(databaseURL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => console.log('connected to db'))
+    .then(app.listen(port, () => {
+        console.log(`Server started on port ${port}`);
+    }))
+    .catch((err) => console.log(err));
 
 
