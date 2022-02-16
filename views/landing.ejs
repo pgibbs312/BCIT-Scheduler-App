@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="landingStyle.css">
     
     <title>BCIT Study Room Scheduler Landing Page</title>
     
 </head>
 <body>
    <div id="landing-page">
-       <img src="BCIT_logo.png" id="bcit-logo">
-       <a href="/home" id="login-btn">Login</a>
+       
+       <form action="/home" method="post">
+            <div class="imgcontainer">
+                <img src="BCIT_logo.png" id="bcit-logo">
+            </div>
+            
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname">
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="pwInp">
+        
+                <!-- <button type="submit" href="/home">Login</button> -->
+                <a href="/home" id="login">Login</a>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
     </div>
 </body>
 </html>
