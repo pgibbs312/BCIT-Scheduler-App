@@ -50,5 +50,3 @@ mongoose.connect(databaseURL, { useNewUrlParser: true, useUnifiedTopology: true 
         console.log(`Server started on port ${port}`);
     }))
     .catch((err) => console.log(err));
-
-
