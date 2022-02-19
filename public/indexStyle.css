@@ -60,3 +60,15 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+#date {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+#bookButton {
+    background-color: white;
+    color: white;
+}
+#bookButton:hover{
+    background-color: navy;
+}

@@ -11,4 +11,6 @@ router.get("/home", ensureAuthenticated, (req, res) => {
         user: req.user,
     })
 })
+
+
 module.exports = router;
