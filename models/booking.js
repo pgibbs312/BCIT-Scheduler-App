@@ -6,6 +6,10 @@ const bookingSchema = new Schema({
         type: String,
         required: true
     },
+    roomNumber: {
+        type: Number,
+        require: true
+    },
     length: {
         type: Number,
         required: true
