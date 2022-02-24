@@ -1,8 +1,8 @@
 import campus_back from '../images/campus.jpg';
 import bcit_icon from '../images/bcit-icon.png'
-import './Mainpage.css';
+import './Enterence_page.css';
 
-function Mainpage() {
+function Enterence_page() {
     return (
         <div className='Homepage'>
 
@@ -19,4 +19,4 @@ function Mainpage() {
     );
 };
 
-export default Mainpage;
+export default Enterence_page;

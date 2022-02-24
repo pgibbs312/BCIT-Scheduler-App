@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Mainpage from './components/Mainpage'
+import Enterence_page from './components/Enterence_page'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Mainpage />
+    <Enterence_page />
   </React.StrictMode>,
   document.getElementById('root')
 );

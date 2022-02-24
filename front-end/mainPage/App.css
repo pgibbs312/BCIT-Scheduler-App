@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root{
+  --primary-white: #fff;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+/*********** NAV BAR **************/
+.logo{
+  width: 6rem;
+  height: 5rem;
+  padding-left: 1rem;
+}
+
+/* logo title */
+.logo-title{
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  color: blue;
+
+}
+.logo-subtitle{
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  color: blue;
+}
+
+/*-------- Menu Links ---------*/
+
+.user-account{
+  font-weight: 1000;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+
+}
+
+nav a.nav-link {
+  font-weight: 1000;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+}
+
+
+.navbar-nav > li > a{
+
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.navbar-brand{
+  max-width: 17rem;
+  padding: 0 !important;
+  height: 6rem !important;
+}
+
+/************ Header ***********/
+.floor-selector{
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-left: 3rem;
+
+}
+.fifth{
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+.sixth{
+  margin-top: 1rem;
+  margin-left: 3rem;
+}
+
+
+/*********** Image *********/
+.fifth{
+  width: 30rem;
+  length: 30rem;
+}
