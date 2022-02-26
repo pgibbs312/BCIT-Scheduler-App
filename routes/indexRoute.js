@@ -12,5 +12,11 @@ router.get("/home", ensureAuthenticated, (req, res) => {
     })
 })
 
+router.get("/book-room", ensureAuthenticated, (req, res) => {
+    res.render("book-room", {
+        user: req.user,
+        day: req.query.day
+    })
+})
 
 module.exports = router;

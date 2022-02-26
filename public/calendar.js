@@ -16,7 +16,8 @@ month.addEventListener('click', function(event) {
     for (let day = 1; day <= value; day++) { 
         const weekend = isWeekend(day);
         const dayName = getDayName(day);
-        calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class="name">${dayName}<div>${day}</div`);
+        calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class="name">${dayName}<div>${day}</div><a href="/book-room?day=${day}">Available Times</a>`);
+        calendar.locat
      }
 })
 week.addEventListener('click', function(event) {
@@ -29,7 +30,7 @@ week.addEventListener('click', function(event) {
     for (let day = 1; day <= value; day++) { 
         const weekend = isWeekend(day);
         const dayName = getDayName(day);
-        calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class="name">${dayName}<div>${day}</div`);
+        calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class="name">${dayName}<div>${day}</div><a href="/book-room?day=${day}">Available Times</a>`);
      }
 })
 
