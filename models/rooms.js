@@ -10,10 +10,6 @@ const roomSchema = new Schema({
         type: Number,
         required: true
     }, 
-    status: {
-        type: Boolean, 
-        required: true
-    },
 }, {timestamps: true});
 
 const Rooms = mongoose.model('Rooms', roomSchema);

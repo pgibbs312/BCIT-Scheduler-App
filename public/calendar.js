@@ -34,7 +34,8 @@ week.addEventListener('click', function(event) {
 })
 
 today.addEventListener('click', function(event){
-    //display date, clear out date
+
+        //display date, clear out date
     dateDsiplay.innerHTML="";
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
