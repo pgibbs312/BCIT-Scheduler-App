@@ -33,7 +33,7 @@ router.post("/book", (req, res) => {
     })
     room.save()
         .then((result) => {
-            res.redirect("/admin-posted");
+            res.redirect("/home");
         })
         .catch((error) => {
             console.log(error);
