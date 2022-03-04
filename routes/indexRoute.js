@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require("../middleware/check_auth");
+const { forwardAuthenticated } = require("../middleware/check_auth");
 
-router.get("/", (req, res) => {
+router.get("/", forwardAuthenticated, (req, res) => {
     res.render("landing")
 })
 
