@@ -9,14 +9,41 @@
     <title>BCIT Study Room Scheduler</title>    
 </head>
 <body>
-    <div id="header">
+
+    <div class="container">
+        <div class="rooms">
+            <% for (i in rooms) { %>
+                <div class="roomNumber"><%=rooms[i].number%></div>
+                <% for (n in bookings) { %> 
+                    <% if (bookings[n].roomNumber === rooms[i].number) { %>
+                        <div class="booked">booked</div>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="times">
+            <% for (i in times) { %>
+                <div><%=times[i].time%></div>
+                <% } %>
+        </div>
+        <div class="bookings">
+
+        </div>
+    </div>    
+
+
+
+
+
+    <!-- <div id="header">
         <button id="today" type="button">Today</button>
         <button id="month" type="button">Month</button>
         <button id="week" type="button">Week</button>
-    </div>
-    <div id="date"></div>
+    </div> -->
+    <!-- <div id="date"></div>
     <div id="day-view"></div>
-    <div id="app-calendar"></div>
-    <script type="module" src="calendar.js"></script>
+    <div id="app-calendar"></div> -->
+    <!-- <script type="module" src="calendar.js"></script> -->
 </body>
 </html>

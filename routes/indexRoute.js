@@ -10,9 +10,21 @@ router.get("/", (req, res) => {
 })
 
 router.get("/home", ensureAuthenticated, (req, res) => {
-    res.render("index", {
-        user: req.user,
-    });
+    Booking.find({ })
+        .then((bookings) => {
+        Rooms.find({ })
+            .then((rooms) => {
+                Time.find({ })
+                    .then((times) => {
+                        res.render("index", {
+                            bookings: bookings,
+                            rooms: rooms,
+                            times: times,
+                            user: req.user,
+                        });
+                    });
+            });
+        });
 });
 
 router.get("/book", ensureAuthenticated, (req, res) => {
@@ -57,7 +69,26 @@ router.post("/admin-rooms", (req, res) => {
             console.log(error)
         })
 });
+router.get("/admin-times", ensureAuthenticated, (req, res) => {
+    res.render("admin-times");
+});
 
+router.post("/admin-times", (req, res) => {
+    console.log(`Time value: ${req.body.time}`);
+    console.log(typeof(req.body.time));
+    const time = new Time({
+        time: req.body.time
+    })
+    time.save()
+        .then((result) => {
+            res.redirect("/home");
+        });
+});
+
+
+router.get("admin-bookings", ensureAuthenticated, (req, res) => {
+    res.render("admin-bookings");
+})
 router.get("/admin-rooms/posted", (req, res) => {
     res.render("admin-posted");
 })

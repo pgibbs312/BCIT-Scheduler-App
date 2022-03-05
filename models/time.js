@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const timeSchema = new Schema({
     time: {
-        type: Number,
+        type: String,
         require: true
     },
 
-}, {timestamps: false});
+}, {timestamps: true});
 
 const Time = mongoose.model('Time', timeSchema);
 

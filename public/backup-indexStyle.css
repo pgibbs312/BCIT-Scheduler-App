@@ -1,0 +1,74 @@
+:root {
+    --light-blue: #1B9CE2;
+}
+body {
+    margin: 0;
+}
+#header {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+#app-calendar {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100vh;
+}
+
+.day {
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 200ms, color 200ms;
+}
+
+.name {
+    padding-bottom: 5px;
+}
+
+.weekend {
+    color: var(--light-blue);
+}
+
+.selected {
+    background-color: var(--light-blue);
+    color: white;
+}
+/* button {
+    color: black;
+    align-items: center;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+    height: 50px;
+} */
+#bcit-logo {
+    width: 5%;
+    padding: 10px;
+}
+
+#login-btn {
+    float: right;
+    font-size: 50px;
+    padding: 10px;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#date {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+#bookButton {
+    background-color: white;
+    color: white;
+}
+#bookButton:hover{
+    background-color: navy;
+}
