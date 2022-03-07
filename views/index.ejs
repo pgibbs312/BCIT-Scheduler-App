@@ -13,19 +13,21 @@
     <div class="container">
         <div class="rooms">
             <% for (i in rooms) { %>
-                <div class="roomNumber"><%=rooms[i].number%></div>
-                <% for (n in bookings) { %> 
-                    <% if (bookings[n].roomNumber === rooms[i].number) { %>
-                        <div class="booked">booked</div>
+                <div class="roomNumber">
+                    <%=rooms[i].number%>
+                    <% for (n in bookings) { %> 
+                        <% if (bookings[n].roomNumber === rooms[i].number) { %>
+                            <div class="booked">booked</div>
+                        <% } %>
                     <% } %>
-                <% } %>
+                </div>
             <% } %>
         </div>
 
         <div class="times">
             <% for (i in times) { %>
                 <div><%=times[i].time%></div>
-                <% } %>
+            <% } %>
         </div>
         <div class="bookings">
 
