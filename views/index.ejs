@@ -11,22 +11,39 @@
 <body>
 
     <div class="container">
-        <div class="rooms">
-            <% for (i in rooms) { %>
-                <div class="roomNumber"><%=rooms[i].number%></div>
-                <% for (n in bookings) { %> 
-                    <% if (bookings[n].roomNumber === rooms[i].number) { %>
-                        <div class="booked">booked</div>
-                    <% } %>
-                <% } %>
-            <% } %>
-        </div>
-
         <div class="times">
             <% for (i in times) { %>
                 <div><%=times[i].time%></div>
                 <% } %>
         </div>
+        <div class="roomOne">
+            <div class="roomNumber"><%=rooms[0].number%></div>
+            <% for (i in bookings) { %>
+                <% if (bookings[i].roomNumber === rooms[0].number) { %> 
+                    <div class="booked">Booked</div>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="roomTwo">
+            <div class="roomNumber"><%=rooms[1].number%></div>
+            <% for (i in bookings) { %>
+                <% if (bookings[i].roomNumber === rooms[1].number) { %> 
+                    <div class="booked">Booked</div>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="roomThree">
+            <div class="roomNumber"><%=rooms[2].number%></div>
+            <% for (i in bookings) { %>
+                <% if (bookings[i].roomNumber === rooms[2].number) { %> 
+                    <div class="booked">Booked</div>
+                <% } %>
+            <% } %>
+        </div>
+
+
+
+        
         <div class="bookings">
 
         </div>

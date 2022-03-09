@@ -1,24 +1,54 @@
 .container{
-
     height: 100vh;
-}
-.rooms {
-    margin-left: 15%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    min-width: 90%;
+    grid-template-columns: repeat(1fr, 6);
+    grid-template-rows: repeat(1fr, 8);
+    grid-template-areas: "time roomOne roomTwo roomThree roomFour roomFive";
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+.roomOne {
+    display: grid;
+    grid-area: roomOne;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+}
+.roomTwo {
+    display: grid;
+    grid-area: roomTwo;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+}
+.roomThree {
+    display: grid;
+    grid-area: roomThree;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+}
+.roomFour {
+    display: grid;
+    grid-area: roomFour;
+}
+.roomFive {
+    display: grid;
+    grid-area: roomFive;
 }
 .roomNumber {
     text-align: center;
+
 }
 .booked {
     text-align: center;
 }
 .times {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-area: time;
+    border-bottom: 1px solid black;
+    margin-top: 15%;
+
 }   
 .bookings {
     display: grid;
