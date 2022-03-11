@@ -43,11 +43,12 @@
 .booked {
     text-align: center;
 }
+.free {
+    text-align: center;
+}
 .times {
     display: grid;
     grid-area: time;
-    border-bottom: 1px solid black;
-    margin-top: 15%;
 
 }   
 .bookings {

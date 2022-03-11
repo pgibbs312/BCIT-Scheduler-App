@@ -17,9 +17,11 @@ router.get("/home", ensureAuthenticated, (req, res) => {
             .then((rooms) => {
                 Time.find({ })
                     .then((times) => {
+                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"]
                         res.render("index", {
                             bookings: bookings,
                             rooms: rooms,
+                            btimes: btimes,
                             times: times,
                             user: req.user,
                         });
@@ -42,6 +44,7 @@ router.post("/book", (req, res) => {
     const room = new Booking({
         name: req.body.name,
         roomNumber: req.body.roomNumber,
+        time: req.body.time,
         length: req.body.length,
     })
     room.save()

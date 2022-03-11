@@ -12,23 +12,33 @@
 
     <div class="container">
         <div class="times">
+            <div class="roomNumber">Times</div>
             <% for (i in times) { %>
                 <div><%=times[i].time%></div>
             <% } %>
         </div>
         <div class="roomOne">
+            <% let check = false %>
             <div class="roomNumber"><%=rooms[0].number%></div>
-            <% for (i in bookings) { %>
-                <% if (bookings[i].roomNumber === rooms[0].number) { %> 
-                    <div class="booked">Booked</div>
+            <% for (n in btimes) { %>
+                <% if (check) { %>
+                    <div class="free">Free</div>
                 <% } %>
+                <% check = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[0].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% check = false %>
+                    <% } %>
+                <% } %>
+                
             <% } %>
         </div>
         <div class="roomTwo">
             <div class="roomNumber"><%=rooms[1].number%></div>
             <% for (i in bookings) { %>
                 <% if (bookings[i].roomNumber === rooms[1].number) { %> 
-                    <div class="booked">Booked</div>
+                    <div class="booked"><%=bookings[i].time%></div>
                 <% } %>
             <% } %>
         </div>
@@ -36,7 +46,7 @@
             <div class="roomNumber"><%=rooms[2].number%></div>
             <% for (i in bookings) { %>
                 <% if (bookings[i].roomNumber === rooms[2].number) { %> 
-                    <div class="booked">Booked</div>
+                    <div class="booked"><%=bookings[i].time%></div>
                 <% } %>
             <% } %>
         </div>
