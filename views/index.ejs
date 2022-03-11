@@ -6,14 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="indexStyle.css">
     
-    <title>BCIT Study Room Scheduler</title>    
+    <title>BCIT Study Room Scheduler</title> 
+    
+    <script type="text/javascript"> function showPopUp() {
+        var width = 500;
+        var height = 500;
+        var left = (window.screen.width / 2) - (width / 2);
+        var top = (window.screen.height / 4);
+        var windowStatus = 'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top + ', scrollbars=yes, status=yes, resizable=yes, titlebar=yes';
+        const url = "http://www.google.com";
+        window.open(url, "hello popup", windowStatus);
+    }
+</script>
+
 </head>
 <body>
-    <div id="header">
-        <button id="today" type="button">Today</button>
-        <button id="month" type="button">Month</button>
-        <button id="week" type="button">Week</button>
+
+    <div class="Nav">
+        <img class="logo" src="BCIT_logo.png" alt="bcit-logo"></img>
+      <p class="title1">TECH HUB </p>
+      <p class="title2">Study Room Booking System</p>
+      <p class='signin-id'>kkim252@my.bcit.ca</p>    
+      <p class='signout-btn'>Signout</p>
+        </div>
+
+        <div class="Container">
+            <div class="todayBtn">
+                <div id="header">
+                <button id="today" type="button">Today</button>
+                <button id="month" type="button">Month</button>
+                <button id="week" type="button">Week</button>
+            </div> </div>
+        <div class="FloorPlan">
+            <p class="fifth">Tech Hub 5th Floor</p>
+            <img class="FloorImg" src="floorplan.jpg" alt="Floor plan image" usemap="#imagemap">
+            <map name="imagemap" id="imagemap">
+                <area shape="rect" coords="408,14,471,55" href="http://www.google.com" target="_blank" >
+                <area shape="rect" coords="408,59,471,98" href="http://www.google.com" target="_blank">
+                <area shape="rect" coords="473,222,549,287" href="http://www.google.com" target="_blank">
+                <area shape="rect" coords="473,283,549,342" href="http://www.google.com" target="_blank">
+                <!-- <area shape="rect" coords="0,0,100,100" href="#" onclick="window.open('주소', 'popup', 'width=넓이, height=높이, scrollbars=no');" onfocus="this.blur();"> -->
+            </map>
+            
+        </div>
+        <div class="Calendar">Calendar</div>
+        <div class="Booking">
+            
+            
+        <div> <a href="javascript:showPopUp()">pop-up test</a> </div>
+        </div>
     </div>
+
+    
+
     <div id="date"></div>
     <div id="day-view"></div>
     <div id="app-calendar"></div>
