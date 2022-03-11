@@ -4,41 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>BCIT Study Room Scheduler Landing Page</title>
+    <link rel="stylesheet" href="/landingStyle.css">
+    <title>Register Page</title>
 </head>
 <body>
-   <div id="landing-page">
+   <div class="landing-page">
        
-       <form action="/auth/login/local" method="POST">
-            <div class="imgcontainer">
-                <img src="BCIT_logo.png" id="bcit-logo">
-            </div>
-            
+       <form action="/auth/register" method="POST">
             <div class="container">
                 <!-- <label for="uname"><b>Username</b></label> -->
+                <input type="name" placeholder="Enter Name" id="name" name="name" onkeyup="check(this)" required>
                 <input type="email" placeholder="Enter Email" id="email" name="email" onkeyup="check(this)" required>
         
                 <!-- <label for="psw"><b>Password</b></label> -->
                 <input type="password" placeholder="Enter Password" name="password" id="pwInp" onkeyup="check(this)" required>
         
-                <button type="submit">Login</button>
-                
-                
-                <!-- <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label> -->
+                <button type="submit">Register</button>
             </div>
             <div>
-                <strong id="loginPopupMessage" class="popupMsg">
-                  <em><%=message%></em>
+                <strong id="rgstrPopupMessage" class="popupMsg">
+                    <em><%=message%></em>
                 </strong>
             </div>
-        <div class="container" style="background-color:#f1f1f1">
-          <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-          <a href="/auth/login" id="login">Login With Google</a>
-          <a href="/auth/register" id="login">Register</a>
-        </div>
       </form>
     </div>
 </body>
@@ -51,7 +38,7 @@
         }
     }
     function closeHelpDiv(){
-    document.getElementById("loginPopupMessage").style.display=" none";
+    document.getElementById("rgstrPopupMessage").style.display=" none";
     }
 </script>
 </html>

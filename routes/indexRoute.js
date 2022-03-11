@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require("../middleware/check_auth");
+const { forwardAuthenticated } = require("../middleware/check_auth");
 const Booking = require("../models/booking");
 const Rooms = require("../models/rooms");
 const Time = require("../models/time");
 
-router.get("/", (req, res) => {
-    res.render("landing")
+router.get("/", forwardAuthenticated, (req, res) => {
+    res.render("login", { message: req.flash('message') })
 })
 
 router.get("/home", ensureAuthenticated, (req, res) => {
@@ -85,6 +86,10 @@ router.post("/admin-times", (req, res) => {
         });
 });
 
+router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/auth/login/home");
+});
 
 router.get("admin-bookings", ensureAuthenticated, (req, res) => {
     res.render("admin-bookings");
