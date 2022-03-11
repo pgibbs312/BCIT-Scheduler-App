@@ -10,21 +10,18 @@
 .roomOne {
     display: grid;
     grid-area: roomOne;
-    border-top: 1px solid black;
     border-left: 1px solid black;
 
 }
 .roomTwo {
     display: grid;
     grid-area: roomTwo;
-    border-top: 1px solid black;
     border-left: 1px solid black;
 
 }
 .roomThree {
     display: grid;
     grid-area: roomThree;
-    border-top: 1px solid black;
     border-left: 1px solid black;
 
 }
@@ -38,18 +35,34 @@
 }
 .roomNumber {
     text-align: center;
-
+    border-bottom: 1px solid black;
 }
 .booked {
     text-align: center;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .free {
     text-align: center;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.timeTwo {
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.timeHeader {
+    text-align: center;
+    margin-bottom: 12px;
+    
 }
 .times {
     display: grid;
     grid-area: time;
-
 }   
 .bookings {
     display: grid;

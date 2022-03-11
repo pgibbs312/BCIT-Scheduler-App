@@ -12,9 +12,9 @@
 
     <div class="container">
         <div class="times">
-            <div class="roomNumber">Times</div>
+            <div class="timeHeader"><b>Times</b></div>
             <% for (i in times) { %>
-                <div><%=times[i].time%></div>
+                <div class="timeTwo"><%=times[i].time%></div>
             <% } %>
         </div>
         <div class="roomOne">
@@ -35,30 +35,44 @@
             <% } %>
         </div>
         <div class="roomTwo">
+            <% let checkTwo = false %>
             <div class="roomNumber"><%=rooms[1].number%></div>
-            <% for (i in bookings) { %>
-                <% if (bookings[i].roomNumber === rooms[1].number) { %> 
-                    <div class="booked"><%=bookings[i].time%></div>
+            <% for (n in btimes) { %>
+                <% if (checkTwo) { %>
+                    <div class="free">Free</div>
                 <% } %>
+                <% checkTwo = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[1].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% checkTwo = false %>
+                    <% } %>
+                <% } %>
+                
             <% } %>
         </div>
         <div class="roomThree">
+            <% let checkThree = false %>
             <div class="roomNumber"><%=rooms[2].number%></div>
-            <% for (i in bookings) { %>
-                <% if (bookings[i].roomNumber === rooms[2].number) { %> 
-                    <div class="booked"><%=bookings[i].time%></div>
+            <% for (n in btimes) { %>
+                <% if (checkThree) { %>
+                    <div class="free">Free</div>
                 <% } %>
+                <% checkThree = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[2].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% checkThree = false %>
+                    <% } %>
+                <% } %>
+                
             <% } %>
         </div>
 
 
 
         
-        <div class="bookings">
-
-        </div>
-    </div>    
-
+        
 
 
 
