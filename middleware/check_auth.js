@@ -10,7 +10,7 @@ module.exports = {
     // if user is not authenticated it forwards them otherwise the will be redirected home
     forwardAuthenticated: function (req, res, next) {
         if (!req.isAuthenticated()) {
-            console.log("forward auth");
+            console.log("not authenticated");
             return next();
         }
         res.redirect("/home");

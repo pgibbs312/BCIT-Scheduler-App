@@ -4,19 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="/indexStyle.css">
     
     <title>BCIT Study Room Scheduler</title>    
 </head>
 <body>
-    <div id="header">
+
+    <div class="container">
+        <div class="times">
+            <div class="timeHeader"><b>Times</b></div>
+            <% for (i in times) { %>
+                <div class="timeTwo"><%=times[i].time%></div>
+            <% } %>
+        </div>
+        <div class="roomOne">
+            <% let check = false %>
+            <div class="roomNumber"><%=rooms[0].number%></div>
+            <% for (n in btimes) { %>
+                <% if (check) { %>
+                    <div class="free">Free</div>
+                <% } %>
+                <% check = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[0].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% check = false %>
+                    <% } %>
+                <% } %>
+                
+            <% } %>
+        </div>
+        <div class="roomTwo">
+            <% let checkTwo = false %>
+            <div class="roomNumber"><%=rooms[1].number%></div>
+            <% for (n in btimes) { %>
+                <% if (checkTwo) { %>
+                    <div class="free">Free</div>
+                <% } %>
+                <% checkTwo = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[1].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% checkTwo = false %>
+                    <% } %>
+                <% } %>
+                
+            <% } %>
+        </div>
+        <div class="roomThree">
+            <% let checkThree = false %>
+            <div class="roomNumber"><%=rooms[2].number%></div>
+            <% for (n in btimes) { %>
+                <% if (checkThree) { %>
+                    <div class="free">Free</div>
+                <% } %>
+                <% checkThree = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[2].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% checkThree = false %>
+                    <% } %>
+                <% } %>
+                
+            <% } %>
+        </div>
+
+
+
+        
+        
+
+
+
+
+    <!-- <div id="header">
         <button id="today" type="button">Today</button>
         <button id="month" type="button">Month</button>
         <button id="week" type="button">Week</button>
-    </div>
-    <div id="date"></div>
+    </div> -->
+    <!-- <div id="date"></div>
     <div id="day-view"></div>
-    <div id="app-calendar"></div>
-    <script type="module" src="calendar.js"></script>
+    <div id="app-calendar"></div> -->
+    <!-- <script type="module" src="calendar.js"></script> -->
 </body>
 </html>

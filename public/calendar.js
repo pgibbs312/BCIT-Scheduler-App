@@ -35,7 +35,8 @@ week.addEventListener('click', function(event) {
 })
 
 today.addEventListener('click', function(event){
-    //display date, clear out date
+
+        //display date, clear out date
     dateDsiplay.innerHTML="";
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -49,7 +50,7 @@ today.addEventListener('click', function(event){
     day.innerHTML = "";
     calendar.innerHTML = "";
 
-    //create time table
+//     //create time table
     const tbl = document.createElement('table');
     tbl.style.width = '95%';
     tbl.style.border = '3px solid black';
@@ -67,11 +68,11 @@ today.addEventListener('click', function(event){
         firstRow.style.border = '3px solid black'
     }
 
-    //start times
+//     //start times
     var start_hr = 9;
     var start_min = "True";
 
-    //inserts time frames
+//     //inserts time frames
     for (let i = 0; i < 17; i++) {
         const tr = tbl.insertRow();
         const td = tr.insertCell();
@@ -116,11 +117,11 @@ today.addEventListener('click', function(event){
 })
 
 // default view
-// for (let day = 1; day <= value; day++) { 
-//     const weekend = isWeekend(day);
-//     const dayName = getDayName(day);
-//     calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class="name">${dayName}<div>${day}</div`);
-// }
+for (let day = 1; day <= value; day++) { 
+    const weekend = isWeekend(day);
+    const dayName = getDayName(day);
+    calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class="name">${dayName}<div>${day}</div`);
+}
 
 //print out todays date
 var startToday = new Date();

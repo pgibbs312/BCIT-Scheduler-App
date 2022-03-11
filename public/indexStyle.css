@@ -1,74 +1,69 @@
-:root {
-    --light-blue: #1B9CE2;
-}
-body {
-    margin: 0;
-}
-#header {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
-#app-calendar {
-    margin-top: 2%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+.container{
     height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: "time roomOne roomTwo roomThree roomFour roomFive";
+    border-top: 1px solid black;
+    border-left: 1px solid black;
 }
+.roomOne {
+    display: grid;
+    grid-area: roomOne;
+    border-left: 1px solid black;
 
-.day {
-    border-bottom: 1px solid grey;
-    border-right: 1px solid grey;
+}
+.roomTwo {
+    display: grid;
+    grid-area: roomTwo;
+    border-left: 1px solid black;
+
+}
+.roomThree {
+    display: grid;
+    grid-area: roomThree;
+    border-left: 1px solid black;
+
+}
+.roomFour {
+    display: grid;
+    grid-area: roomFour;
+}
+.roomFive {
+    display: grid;
+    grid-area: roomFive;
+}
+.roomNumber {
     text-align: center;
-    padding-top: 5px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 200ms, color 200ms;
+    border-bottom: 1px solid black;
 }
-
-.name {
-    padding-bottom: 5px;
-}
-
-.weekend {
-    color: var(--light-blue);
-}
-
-.selected {
-    background-color: var(--light-blue);
-    color: white;
-}
-/* button {
-    color: black;
-    align-items: center;
-    font-size: 16px;
-    border: none;
+.booked {
     text-align: center;
-    height: 50px;
-} */
-#bcit-logo {
-    width: 5%;
-    padding: 10px;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
-
-#login-btn {
-    float: right;
-    font-size: 50px;
-    padding: 10px;
-    text-decoration: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.free {
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
-
-#date {
-    margin-bottom: 10px;
-    font-size: 2em;
+.timeTwo {
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
-
-#bookButton {
-    background-color: white;
-    color: white;
+.timeHeader {
+    text-align: center;
+    margin-bottom: 12px;
+    
 }
-#bookButton:hover{
-    background-color: navy;
+.times {
+    display: grid;
+    grid-area: time;
+}   
+.bookings {
+    display: grid;
 }

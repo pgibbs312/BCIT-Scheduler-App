@@ -8,7 +8,11 @@ const bookingSchema = new Schema({
     },
     roomNumber: {
         type: Number,
-        require: true
+        required: true
+    },
+    time: {
+        type: String,
+        required: true
     },
     length: {
         type: Number,
