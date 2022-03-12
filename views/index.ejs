@@ -19,10 +19,10 @@
         </div>
         <div class="roomOne">
             <% let check = false %>
-            <div class="roomNumber"><%=rooms[0].number%></div>
+            <div class="roomNumber">Room <%=rooms[0].number%></div>
             <% for (n in btimes) { %>
                 <% if (check) { %>
-                    <div class="free">Free</div>
+                <div class="free">Free</div>
                 <% } %>
                 <% check = true %>
                 <% for (i in bookings) { %> 
@@ -36,7 +36,7 @@
         </div>
         <div class="roomTwo">
             <% let checkTwo = false %>
-            <div class="roomNumber"><%=rooms[1].number%></div>
+            <div class="roomNumber">Room <%=rooms[1].number%></div>
             <% for (n in btimes) { %>
                 <% if (checkTwo) { %>
                     <div class="free">Free</div>
@@ -53,7 +53,7 @@
         </div>
         <div class="roomThree">
             <% let checkThree = false %>
-            <div class="roomNumber"><%=rooms[2].number%></div>
+            <div class="roomNumber">Room <%=rooms[2].number%></div>
             <% for (n in btimes) { %>
                 <% if (checkThree) { %>
                     <div class="free">Free</div>

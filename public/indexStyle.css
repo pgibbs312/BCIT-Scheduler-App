@@ -1,28 +1,37 @@
 .container{
-    height: 100vh;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     grid-template-areas: "time roomOne roomTwo roomThree roomFour roomFive";
-    border-top: 1px solid black;
-    border-left: 1px solid black;
+    /* border-top: 1px solid black;
+    border-left: 1px solid #000;
+    border-right: 1px solid black; */
+    margin: 2px;
 }
+
+.times {
+    display: grid;
+    grid-area: time;
+    border: 1px solid black;
+}   
+
 .roomOne {
     display: grid;
     grid-area: roomOne;
-    border-left: 1px solid black;
+    border: 1px solid black;
 
 }
 .roomTwo {
     display: grid;
     grid-area: roomTwo;
-    border-left: 1px solid black;
+    border: 1px solid black;
 
 }
 .roomThree {
     display: grid;
     grid-area: roomThree;
-    border-left: 1px solid black;
+    border: 1px solid black;
 
 }
 .roomFour {
@@ -39,31 +48,26 @@
 }
 .booked {
     text-align: center;
-    border-bottom: 1px solid black;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    border: 1px solid black;
+    margin: 2px;
+    background-color: navy;
+    color: white;
 }
 .free {
     text-align: center;
-    border-bottom: 1px solid black;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    border: 1px solid black;
+    margin: 2px;
 }
 .timeTwo {
     text-align: center;
-    border-bottom: 1px solid black;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    border: 1px solid black;
+    margin: 2px;
 }
 .timeHeader {
     text-align: center;
-    margin-bottom: 12px;
-    
+    border-bottom: 1px solid #000;
 }
-.times {
-    display: grid;
-    grid-area: time;
-}   
+
 .bookings {
     display: grid;
 }

@@ -17,7 +17,7 @@ router.get("/home", ensureAuthenticated, (req, res) => {
             .then((rooms) => {
                 Time.find({ })
                     .then((times) => {
-                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"]
+                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "timeholder"]
                         res.render("index", {
                             bookings: bookings,
                             rooms: rooms,
