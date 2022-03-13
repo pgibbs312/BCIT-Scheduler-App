@@ -1,15 +1,31 @@
+body{
+    padding: 30px;
+}
+
+/* parent div */
+.wrapper{
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "logoGrid     date  "
+                         "container map"
+                         "container map"
+                         "container color2";
+    grid-gap: 5px;
+}
+
+/* calendar view */
 .container{
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "time roomOne roomTwo roomThree roomFour roomFive";
-    /* border-top: 1px solid black;
-    border-left: 1px solid #000;
-    border-right: 1px solid black; */
-    margin: 2px;
+    grid-template-areas: "time roomOne roomTwo roomThree ";
+    padding-left: 30px;
+    padding-top: 30px;
+    grid-area: container;
 }
-
 .times {
     display: grid;
     grid-area: time;
@@ -67,7 +83,82 @@
     text-align: center;
     border-bottom: 1px solid #000;
 }
-
 .bookings {
     display: grid;
 }
+
+/* header top right  */
+#todayDate{
+    display:grid;
+    padding: 30px;
+    font-size: 2em;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: "date logout";
+    grid-area: date;
+}
+#logout{
+    display:grid;
+    height: 30%;
+    text-align: center;
+    padding: 5%;
+
+    grid-area: logout;
+}
+
+/* header top left */
+.logoGrid{
+    display: grid;
+    grid-template-columns:31.5% 31.5% 31.5%;
+    grid-template-rows: 90% 20%;
+    grid-template-areas: 'bcit para .'
+                         'today week month';
+    padding-left: 30px;
+    grid-area: logoGrid;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+    grid-area: bcit;
+}
+#logodiv{
+    display:grid;
+    width: 120px;
+    height: 120px;
+}
+#para{
+    display: grid;
+    grid-area: para;
+    padding: 10px;
+    font-size: 2em;
+}
+
+/* view buttons */
+#todayBut{
+    grid-area: today;
+}
+#weekBut{
+    grid-area: week;
+}
+#monthBut{
+    grid-area: month;
+}
+.viewButton{
+    margin: 2px;
+}
+
+/* map view */
+#map{
+    width: 100%;
+    height: 100%;
+    grid-area: map;
+}
+#color2{
+    background-color: blue;
+    color:white;
+    height: 100px;
+    grid-area: color2;
+    padding: 10px;
+}
+
+
+

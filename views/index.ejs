@@ -10,6 +10,21 @@
 </head>
 <body>
 
+    
+<div class="wrapper">
+    <div class="logoGrid"> 
+        <div id="logodiv">
+            <img src="BCIT_logo.png" id="logo">
+        </div>
+        <div id="para">BCIT Room Booking System</div>
+
+        <button class="viewButton" id="todayBut">Today</button>
+        <button class="viewButton" id="weekBut">Week</button>
+        <button class="viewButton" id="monthBut">Month</button>
+
+    </div>
+
+
     <div class="container">
         <div class="times">
             <div class="timeHeader"><b>Times</b></div>
@@ -68,14 +83,18 @@
                 
             <% } %>
         </div>
+    </div>  <!--container end-->
 
-
+    <img src="5th flr plan at DTC - latest.png" id="map">
+    <div id="todayDate">
+        Today's Date: <script> document.write(new Date().toDateString()); </script>
+        <button id="logout"> Log out</button>
+    </div>
+    <div id="color2">some useful section</div>
 
         
         
-
-
-
+</div>
 
     <!-- <div id="header">
         <button id="today" type="button">Today</button>
