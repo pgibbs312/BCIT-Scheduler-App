@@ -1,24 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
 /* Bordered form */
+.landing-page{
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Saira', sans-serif;
+}
+ /* Add padding to containers */
+ .container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+.name{
+  grid-column: 1/2;
+  grid-row:1/2 ;
+}
+.email {
+  grid-column: 1/2;
+  grid-row:2/3 ;
+}
+.password{
+  grid-column: 1/2;
+  grid-row:3/4 ;
+}
+.button{
+  grid-column: 1/2;
+  grid-row:4/5 ;
+}
+
+
+.logo{
+  width:70px;
+  height:70px;
+}
+h1 {
+  color: #003C71;
+}
+
 form {
     border: 10px solid #f1f1f1;
-    width: 40%;
+    width: 100%;
     margin: auto;
   }
   
   /* Full-width inputs */
   input[type=text], input[type=password] {
-    width: 100%;
+    /* width: 100%; */
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid grey;
     box-sizing: border-box;
   }
   #pwInp{
       margin-bottom: 20px;
   }
 
+  #name {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid grey;
+    box-sizing: border-box;
+    padding: 12px 20px;
+  }
   
+  #email {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid grey;
+    box-sizing: border-box;
+    padding: 12px 20px;
+  }
+
+  #register-btn {
+    color: white;
+    background-color:#003C71 ;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: grey 1px solid;
+    font-family: 'Saira', sans-serif;
+    font: 16px;
+    width:50%;
+  }
+  #register-btn:hover{
+    background-color: #1B9CE2;
+    color:white;
+}
+#cancel-btn {
+  color: #003C71;
+  background-color: white;
+  border: grey 1px solid;
+  padding:10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Saira', sans-serif;
+  font: 16px;
+  width:50%;
+}
+#cancel-btn:hover{
+  background-color: #1B9CE2;
+  color:white;
+}
+
   /* Set a style for all buttons */
   /* button {
     background-color: #000080;
@@ -62,10 +156,7 @@ form {
     border-radius: 50%;
   }
   
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
+ 
   
   /* The "Forgot password" text */
   span.psw {
