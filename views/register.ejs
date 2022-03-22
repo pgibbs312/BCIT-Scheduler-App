@@ -9,17 +9,30 @@
 </head>
 <body>
    <div class="landing-page">
-       
+       <img class="logo" src="../BCIT_logo.png" alt="bcit logo">
+       <h1> Register</h1>
        <form action="/auth/register" method="POST">
             <div class="container">
                 <!-- <label for="uname"><b>Username</b></label> -->
+                <div class="name">
+                <span>Name: </span>
                 <input type="name" placeholder="Enter Name" id="name" name="name" onkeyup="check(this)" required>
+            </div>
+                
+            <div class="email">
+                <span>Email: </span>
                 <input type="email" placeholder="Enter Email" id="email" name="email" onkeyup="check(this)" required>
-        
+            </div>
                 <!-- <label for="psw"><b>Password</b></label> -->
+                <div class="password">
+                <span>Password: </span>
                 <input type="password" placeholder="Enter Password" name="password" id="pwInp" onkeyup="check(this)" required>
-        
-                <button type="submit">Register</button>
+            </div>
+
+                <div class="btn">
+                <button id="register-btn" type="submit" >Register</button>
+                <!-- <button id="cancel-btn" type="submit" >Cancel</button> -->
+            </div>
             </div>
             <div>
                 <strong id="rgstrPopupMessage" class="popupMsg">
