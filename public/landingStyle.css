@@ -14,19 +14,19 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
 }
-.name{
+.first{
   grid-column: 1/2;
   grid-row:1/2 ;
 }
-.email {
+.second {
   grid-column: 1/2;
   grid-row:2/3 ;
 }
-.password{
+.third{
   grid-column: 1/2;
   grid-row:3/4 ;
 }
-.button{
+.fourth{
   grid-column: 1/2;
   grid-row:4/5 ;
 }
@@ -96,8 +96,43 @@ form {
   #register-btn:hover{
     background-color: #1B9CE2;
     color:white;
-}
-#cancel-btn {
+  }
+  #login-btn {
+    color: white;
+    background-color:#003C71 ;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: grey 1px solid;
+    font-family: 'Saira', sans-serif;
+    font: 16px;
+    width:50%;
+  }
+  #login-btn:hover{
+    background-color: #1B9CE2;
+    color:white;
+  }
+  #login {
+    color: #003C71;
+    /* background-color:#003C71 ; */
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    /* border-radius: 5px;
+    border: grey 1px solid; */
+    font-family: 'Saira', sans-serif;
+    font: 16px;
+    width:50%;
+  }
+  #login:hover{
+    color: #1B9CE2;
+  }
+ #google{
+   width:20%;
+   height:20%;
+ }
+/* #cancel-btn {
   color: #003C71;
   background-color: white;
   border: grey 1px solid;
@@ -111,7 +146,7 @@ form {
 #cancel-btn:hover{
   background-color: #1B9CE2;
   color:white;
-}
+} */
 
   /* Set a style for all buttons */
   /* button {
@@ -124,12 +159,12 @@ form {
     width: 100%;
   } */
 
-  #login {
+  /* #login {
       padding:10px;
       background-color: #000080;
       color:white;
       text-decoration: none;
-  }
+  } */
 
   
   /* Add a hover effect for buttons */

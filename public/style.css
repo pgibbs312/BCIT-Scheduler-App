@@ -1,10 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
+
+
+
+#landing-page{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Saira', sans-serif;
+}
+.container {
+  padding: 16px;
+}
+
+
 /* Bordered form */
 form {
     border: 10px solid #f1f1f1;
-    width: 40%;
+    width: 500px;
     margin: auto;
   }
   
+#bcit-logo{
+  width:70px;
+  height:70px;
+}
+
   /* Full-width inputs */
   input[type=text], input[type=password] {
     width: 100%;
@@ -18,7 +39,22 @@ form {
       margin-bottom: 20px;
   }
 
-  
+  #login-btn {
+    color: white;
+    background-color:#003C71 ;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: grey 1px solid;
+    font-family: 'Saira', sans-serif;
+    font: 16px;
+    width:10%;
+  }
+  #login-btn:hover{
+    background-color: #1B9CE2;
+    color:white;
+  }
   /* Set a style for all buttons */
   /* button {
     background-color: #000080;
@@ -51,10 +87,10 @@ form {
   }
   
   /* Center the avatar image inside this container */
-  .imgcontainer {
+  /* .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
-  }
+  } */
   
   /* Avatar image */
   img.avatar {
@@ -63,10 +99,7 @@ form {
   }
   
   /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
-  
+ 
   /* The "Forgot password" text */
   span.psw {
     float: left;
