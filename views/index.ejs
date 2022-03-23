@@ -85,12 +85,51 @@
         </div>
     </div>  <!--container end-->
 
-    <img src="5th flr plan at DTC - latest.png" id="map">
+    <img src="floorplan.jpg" id="map">
     <div id="todayDate">
         Today's Date: <script> document.write(new Date().toDateString()); </script>
         <button id="logout"> Log out</button>
     </div>
-    <div id="color2">some useful section</div>
+    
+    <div id="color2">  
+        <form action="/book" method="POST">
+            <div class="form-group">
+                <label for="name"><b>Name</b></label>
+                <input type="name" placeholder="Enter Name" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="roomNumber"><b>Room Number</b></label>
+                <select id="roomNumber" name ="roomNumber">
+                    <% for (i in rooms) { %>
+                        <option value="<%=rooms[i].number%>"><%=rooms[i].number%></option> 
+                    <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <lable for="time"><b>Time</b></lable>
+                <select id="time" name="time">
+                    <option value="9:00am">9:00</option>
+                    <option value="10:00am">10:00</option>
+                    <option value="11:00am">11:00</option>
+                    <option value="12:00pm">12:00</option>
+                    <option value="1:00pm">1:00</option>
+                    <option value="2:00pm">2:00</option>
+                    <option value="3:00pm">3:00</option>
+                    <option value="4:00pm">4:00</option>
+                    <option value="5:00pm">5:00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <lable for="length"><b>Length</b></lable>
+                <select id="length" name="length">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
         
         
