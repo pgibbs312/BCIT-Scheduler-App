@@ -197,6 +197,8 @@ body{
     background-color: #1B9CE2;
     color:white;
   }
-
+#imagemap:hover{
+    cursor:pointer;
+}
 
 /* test */
