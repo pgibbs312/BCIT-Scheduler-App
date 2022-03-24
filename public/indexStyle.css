@@ -135,6 +135,7 @@ body{
     font-size: 1.5em;
 }
 
+/* */
 /* view buttons */
 #todayBut{
     grid-area: today;
