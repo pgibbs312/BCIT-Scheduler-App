@@ -202,4 +202,177 @@ body{
     cursor:pointer;
   }
 
-/* test */
+
+ /* From Kaylyn */
+
+@import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
+body{
+    padding: 30px;
+    font-family: 'Saira', sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Nav bar */
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    border-bottom: 1px solid lightgray;
+}
+.nav-content{
+    display: inline-block;
+    font-size: 2em;
+}
+.btns{
+    color: white;
+    background-color:#003C71 ;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: grey 1px solid;
+    font-family: 'Saira', sans-serif;
+    font-size: 1em;
+    width:5em;
+    height:5%;
+}
+.btns:hover{
+    background-color: #1B9CE2;
+    color:white;
+  }
+.submit-btn{
+    text-align: center;
+}
+
+/* Page Grid */
+
+.page-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px 300px 450px;
+}
+.calendar1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: center;
+    padding-top: 5%;
+    
+}
+.calendar2{
+    background: lightblue;
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+.floorplan1{
+    /* background: lightcyan; */
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align: center;
+}
+.floorplan2{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+}
+.booking{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    font-size: 1.5em;
+    padding: 5%;
+}
+.viewButton{
+    width:100px;
+    font-size: large;
+    font-weight: bold;
+}
+p{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+ul{
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+li{
+    display: inline;
+    padding: 2%;
+    font-size: large;
+}
+/* .room-content{
+    text-align: left;
+} */
+.input-box{
+    font-size: 1em;
+}
+
+.pop-btn{
+    display: block;
+    width:200px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    background: skyblue ;
+    color:#fff;
+    border-radius: 15px;
+}
+.pop-up{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%,-50%) ;
+    background: #fff;
+    width:500px;
+    height:500px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    border-radius: 0px;
+    text-align: right;
+    padding:20px;
+    box-sizing: border-box;
+    opacity:0;
+    transition: all 0.5s;
+    z-index: 3;
+}
+.pop-up:target{
+    opacity: 1;
+}
+.pop-up:target + .dim{
+    opacity: 1;
+    z-index: 2;
+}
+.pop-up a{
+    color:grey;
+    text-decoration: none;
+}
+.dim{
+    position:absolute;
+    z-index: -1;
+    left:0;
+    top:0;
+    background: rgba(0,0,0,0.6);
+    width:100%;
+    height:100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.close{
+    background:#F1F3F4 ;
+    color: #000;
+}
+.room-img{
+    display: block; 
+    margin: 0px auto;
+}
+ul{
+    text-align: left;
+    margin-top: 40px;
+}
+.room-num{
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
