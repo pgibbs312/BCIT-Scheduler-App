@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
 body{
     padding: 30px;
+    font-family: 'Saira', sans-serif;
 }
+
 
 /* parent div */
 .wrapper{
@@ -91,7 +94,7 @@ body{
 #todayDate{
     display:grid;
     padding: 30px;
-    font-size: 2em;
+    font-size: 1.5em;
     grid-template-columns: 90% 10%;
     grid-template-areas: "date logout";
     grid-area: date;
@@ -116,8 +119,8 @@ body{
     grid-area: logoGrid;
 }
 #logo{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     grid-area: bcit;
 }
 #logodiv{
@@ -129,21 +132,28 @@ body{
     display: grid;
     grid-area: para;
     padding: 10px;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 /* view buttons */
 #todayBut{
     grid-area: today;
+    font-family: 'Saira', sans-serif;
+
 }
 #weekBut{
     grid-area: week;
+    font-family: 'Saira', sans-serif;
+ 
 }
 #monthBut{
     grid-area: month;
+    font-family: 'Saira', sans-serif;
+  
 }
 .viewButton{
     margin: 2px;
+
 }
 
 /* map view */
@@ -153,13 +163,40 @@ body{
     grid-area: map;
 }
 #color2{
-    background-color: blue;
-    color:white;
+   
+    color:black;
     height: 100px;
     grid-area: color2;
     padding: 10px;
 }
-
+#name {
+    margin: 10px;
+}
+#roomNumber{
+    margin: 10px;
+}
+#time{
+    margin: 10px;
+}
+#length{
+    margin: 10px;
+}
+#submit-btn{
+    color: white;
+    background-color:#003C71 ;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: grey 1px solid;
+    font-family: 'Saira', sans-serif;
+    font: 20px;
+    width:20%;
+}
+#submit-btn:hover{
+    background-color: #1B9CE2;
+    color:white;
+  }
 
 
 /* test */
