@@ -12,18 +12,22 @@
 
     
 <div class="wrapper">
-    <div class="logoGrid"> 
-        <div id="logodiv">
-            <img src="BCIT_logo.png" id="logo">
+    <div class="nav">
+        <img src="BCIT_logo.png" id="logo">
+        <p class="nav-content">BCIT Room Booking System</p>
+        <p class="nav-content">Today's Date:</p>
+        <div class="nav-content" id="todayDate">
+            <script> document.write(new Date().toDateString()); </script>
         </div>
-        <div id="para">BCIT Room Booking System</div>
-
-        <button class="viewButton" id="todayBut">Today</button>
-        <button class="viewButton" id="weekBut">Week</button>
-        <button class="viewButton" id="monthBut">Month</button>
+        <button id="logout"> Log out</button>
 
     </div>
 
+    <div class="calendar1">
+        <button class="viewButton" id="todayBut">Today</button>
+        <button class="viewButton" id="weekBut">Week</button>
+        <button class="viewButton" id="monthBut">Month</button>
+    </div>
 
     <div class="container">
         <div class="times">
@@ -85,21 +89,89 @@
         </div>
     </div>  <!--container end-->
 
+    <div class="floorplan1">
+        <p>5th Floor of Tech Hub</p>
+        <ul>
+            <li><a href="#pop1">Room582</a></li>
+            <div class="pop-up" id="pop1">
+                <a href="#a">
+                    <p class="close">Close</p>
+                </a>
+                <img class="room-img" src="../room582.jpg" alt="room image">
+                <p class="room-num">Room 582</p>
+                <ul class="room-content">
+
+                    <li>Need FOIL ID card to enter</li>
+                    <li>40" LCD display</li>
+                    <li>Laptop hook up</li>
+                    <li>Writing Surfase</li>
+                    <li>Capacity: 5</li>
+                </ul>
+            </div>
+            <div class="dim"></div>
+
+            <li><a href="#pop2">Room583</a></li>
+            <div class="pop-up" id="pop2">
+                <a href="#a">
+                    <p class="close">Close</p>
+                </a>
+                <img class="room-img" src="../room583.jpg" alt="room image">
+                <p class="room-num">Room 583</p>
+                <ul>
+                    <li>Need FOIL ID card to enter</li>
+                    <li>40" LCD display</li>
+                    <li>Laptop hook up</li>
+                    <li>Writing Surfase</li>
+                    <li>Capacity: 5</li>
+                </ul>
+            </div>
+            <div class="dim"></div>
+
+            <li><a href="#pop3">Room586</a></li>
+            <div class="pop-up" id="pop3">
+                <a href="#a">
+                    <p class="close">Close</p>
+                </a>
+                <img class="room-img" src="../room582.jpg" alt="room image">
+                <p class="room-num">Room 586</p>
+                <ul>
+
+                    <li>Need FOIL ID card to enter</li>
+                    <li>40" LCD display</li>
+                    <li>Laptop hook up</li>
+                    <li>Writing Surfase</li>
+                    <li>Capacity: 5</li>
+                </ul>
+            </div>
+            <div class="dim"></div>
+            <li><a href="#pop4">Room587</a></li>
+            <div class="pop-up" id="pop4">
+                <a href="#a">
+                    <p class="close">Close</p>
+                </a>
+                <img class="room-img" src="../room583.jpg" alt="room image">
+                <p class="room-num">Room 587</p>
+                <ul>
+                    <li>Need FOIL ID card to enter</li>
+                    <li>40" LCD display</li>
+                    <li>Laptop hook up</li>
+                    <li>Writing Surfase</li>
+                    <li>Capacity: 5</li>
+                </ul>
+            </div>
+            <div class="dim"></div>
+
+        </ul>
+    </div>
+
     <img src="floorplan.jpg" id="map" alt="floor plan" usemap="#imagemap">
     <map name="imagemap" id="imagemap">
         <area shape="rect" coords="12,15, 548, 340" onclick="window.open('/582','_blank','left=100,top=100,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=450,height=600')" onfocus="this.blur()">
     </map>
 
-
-
-
-
-    <div id="todayDate">
-        Today's Date: <script> document.write(new Date().toDateString()); </script>
-        <button id="logout"> Log out</button>
-    </div>
     
     <div id="color2">  
+        <p>Book Study Room</p>
         <form action="/book" method="POST">
             <div class="form-group">
                 <label for="name"><b>Subject: </b></label>
@@ -142,222 +214,6 @@
         
         
 </div>
-
-    <!-- <div id="header">
-        <button id="today" type="button">Today</button>
-        <button id="month" type="button">Month</button>
-        <button id="week" type="button">Week</button>
-    </div> -->
-    <!-- <div id="date"></div>
-    <div id="day-view"></div>
-    <div id="app-calendar"></div> -->
-    <!-- <script type="module" src="calendar.js"></script> -->
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-     
-    <!-- From Kaylyn -->
-
-        <!-- Nav bar -->
-    <div class="nav">
-        <img src="BCIT_logo.png" id="logo">
-        <p class="nav-content">BCIT Room Booking System</p>
-        <p class="nav-content">Today's Date:</p>
-        <div class="nav-content">
-            <script> document.write(new Date().toDateString()); </script>
-        </div>
-        <button class="btns"> Log out</button>
-
-    </div>
-    <!-- End of Nav bar -->
-
-
-    <div class="page-grid">
-
-        <!-- Change the calendar with today/Week/Month buttons -->
-        <div class="calendar1">
-            <button class="viewButton" id="todayBut">Today</button>
-            <button class="viewButton" id="weekBut">Week</button>
-            <button class="viewButton" id="monthBut">Month</button>
-        </div>
-        <!-- End of 'Change the calendar with today/Week/Month buttons' -->
-
-
-        <!-- Calendar -->
-        <div class="calendar2">
-
-            <div class="container">
-                <div class="times">
-                    <div class="timeHeader"><b>Times</b></div>
-                    <% for (i in times) { %>
-                        <div class="timeTwo">
-                            <%=times[i].time%>
-                        </div>
-                        <% } %>
-                </div>
-            
-
-
-                <!-- Calendar should be here -->
-
-
-
-
-            </div>
-
-
-
-        </div>
-        <!-- End of Calendar -->
-
-
-        <!-- Room buttons -->
-        <div class="floorplan1">
-            <p>5th Floor of Tech Hub</p>
-            <ul>
-                <li><a href="#pop1">Room582</a></li>
-                <div class="pop-up" id="pop1">
-                    <a href="#a">
-                        <p class="close">Close</p>
-                    </a>
-                    <img class="room-img" src="../room582.jpg" alt="room image">
-                    <p class="room-num">Room 582</p>
-                    <ul class="room-content">
-
-                        <li>Need FOIL ID card to enter</li>
-                        <li>40" LCD display</li>
-                        <li>Laptop hook up</li>
-                        <li>Writing Surfase</li>
-                        <li>Capacity: 5</li>
-                    </ul>
-                </div>
-                <div class="dim"></div>
-
-                <li><a href="#pop2">Room583</a></li>
-                <div class="pop-up" id="pop2">
-                    <a href="#a">
-                        <p class="close">Close</p>
-                    </a>
-                    <img class="room-img" src="../room583.jpg" alt="room image">
-                    <p class="room-num">Room 583</p>
-                    <ul>
-                        <li>Need FOIL ID card to enter</li>
-                        <li>40" LCD display</li>
-                        <li>Laptop hook up</li>
-                        <li>Writing Surfase</li>
-                        <li>Capacity: 5</li>
-                    </ul>
-                </div>
-                <div class="dim"></div>
-
-                <li><a href="#pop3">Room586</a></li>
-                <div class="pop-up" id="pop3">
-                    <a href="#a">
-                        <p class="close">Close</p>
-                    </a>
-                    <img class="room-img" src="../room582.jpg" alt="room image">
-                    <p class="room-num">Room 586</p>
-                    <ul>
-
-                        <li>Need FOIL ID card to enter</li>
-                        <li>40" LCD display</li>
-                        <li>Laptop hook up</li>
-                        <li>Writing Surfase</li>
-                        <li>Capacity: 5</li>
-                    </ul>
-                </div>
-                <div class="dim"></div>
-                <li><a href="#pop4">Room587</a></li>
-                <div class="pop-up" id="pop4">
-                    <a href="#a">
-                        <p class="close">Close</p>
-                    </a>
-                    <img class="room-img" src="../room583.jpg" alt="room image">
-                    <p class="room-num">Room 587</p>
-                    <ul>
-                        <li>Need FOIL ID card to enter</li>
-                        <li>40" LCD display</li>
-                        <li>Laptop hook up</li>
-                        <li>Writing Surfase</li>
-                        <li>Capacity: 5</li>
-                    </ul>
-                </div>
-                <div class="dim"></div>
-
-            </ul>
-        </div>
-        <!-- End of Room buttons -->
-
-
-
-        <!-- Floor Plan -->
-        <div class="floorplan2">
-
-            <img class="img" src="floorplan.jpg" alt="floor plan">
-        </div>
-
-        <!-- End of Floor Plan -->
-
-
-
-        
-        <!-- Booking Section -->
-        <div class="booking">
-            <p>Booking Study Room</p>
-            <form action="/book" method="POST">
-                <div class="form-group">
-                    <label for="name"><b>Subject: </b></label>
-                    <input class="input-box" type="name" placeholder="Enter the meeting subject" id="name" name="name"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="roomNumber"><b>Room Number: </b></label>
-                    <select class="input-box" id="roomNumber" name="roomNumber">
-                        <% for (i in rooms) { %>
-                            <option value="<%=rooms[i].number%>">
-                                <%=rooms[i].number%>
-                            </option>
-                            <% } %>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <lable for="time"><b>Time: </b></lable>
-                    <select class="input-box" id="time" name="time">
-                        <option value="9:00am">9:00</option>
-                        <option value="10:00am">10:00</option>
-                        <option value="11:00am">11:00</option>
-                        <option value="12:00pm">12:00</option>
-                        <option value="1:00pm">1:00</option>
-                        <option value="2:00pm">2:00</option>
-                        <option value="3:00pm">3:00</option>
-                        <option value="4:00pm">4:00</option>
-                        <option value="5:00pm">5:00</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <lable for="length"><b>Length: </b></lable>
-                    <select class="input-box" id="length" name="length">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <div class="submit-btn">
-                    <button class="btns" id="submit-btn" type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
-        <!-- End of Booking Section -->
-
-    </div>
-
-
 
 
 </body>

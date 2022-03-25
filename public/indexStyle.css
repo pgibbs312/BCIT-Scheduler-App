@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
 body{
-    padding: 30px;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
     font-family: 'Saira', sans-serif;
 }
-
+p{
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
 /* parent div */
 .wrapper{
@@ -11,59 +18,67 @@ body{
 
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
-    grid-template-areas: "logoGrid     date  "
+    grid-template-areas: "nav       nav "
+                         "viewBtn roomBtn"
                          "container map"
-                         "container map"
-                         "container color2";
+                         "container color2"
+                         "container color2 "
+                         ;
     grid-gap: 5px;
+
 }
 
 /* calendar view */
 .container{
     width: 90%;
+
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: "time roomOne roomTwo roomThree ";
     padding-left: 30px;
-    padding-top: 30px;
+
     grid-area: container;
 }
 .times {
     display: grid;
     grid-area: time;
     border: 1px solid black;
+
 }   
 
 .roomOne {
     display: grid;
     grid-area: roomOne;
     border: 1px solid black;
-
+    height: 70px;
 }
 .roomTwo {
     display: grid;
     grid-area: roomTwo;
     border: 1px solid black;
-
+    height: 70px;
 }
 .roomThree {
     display: grid;
     grid-area: roomThree;
     border: 1px solid black;
-
+    height: 70px;
 }
 .roomFour {
     display: grid;
     grid-area: roomFour;
+    height: 70px;
 }
 .roomFive {
     display: grid;
     grid-area: roomFive;
+    height: 70px;
 }
 .roomNumber {
     text-align: center;
     border-bottom: 1px solid black;
+    height: 70px;
 }
 .booked {
     text-align: center;
@@ -71,20 +86,24 @@ body{
     margin: 2px;
     background-color: navy;
     color: white;
+    height: 70px;
 }
 .free {
     text-align: center;
     border: 1px solid black;
     margin: 2px;
+    height: 70px;
 }
 .timeTwo {
     text-align: center;
     border: 1px solid black;
     margin: 2px;
+    height: 70px;
 }
 .timeHeader {
     text-align: center;
     border-bottom: 1px solid #000;
+    height: 70px;
 }
 .bookings {
     display: grid;
@@ -101,12 +120,24 @@ body{
 }
 #logout{
     display:grid;
-    height: 30%;
     text-align: center;
-    padding: 5%;
-
+    padding: 1.25%;
+    color: white;
+    background-color:#003C71 ;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: grey 1px solid;
+    font-family: 'Saira', sans-serif;
+    height: 45%;
     grid-area: logout;
+    margin-top: 2%;
 }
+#logout:hover{
+    background-color: #1B9CE2;
+    color:white;
+}
+
 
 /* header top left */
 .logoGrid{
@@ -135,7 +166,6 @@ body{
     font-size: 1.5em;
 }
 
-/* */
 /* view buttons */
 #todayBut{
     grid-area: today;
@@ -159,16 +189,16 @@ body{
 
 /* map view */
 #map{
-    width: 100%;
+    width: 80%;
     height: 100%;
     grid-area: map;
 }
 #color2{
    
     color:black;
-    height: 100px;
+    margin-left: 5%;
     grid-area: color2;
-    padding: 10px;
+    font-size: 1.5em;
 }
 #name {
     margin: 10px;
@@ -183,6 +213,7 @@ body{
     margin: 10px;
 }
 #submit-btn{
+    margin-top: 10px;
     color: white;
     background-color:#003C71 ;
     border: none;
@@ -202,63 +233,23 @@ body{
     cursor:pointer;
   }
 
-
- /* From Kaylyn */
-
-@import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
-body{
-    padding: 30px;
-    font-family: 'Saira', sans-serif;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-/* Nav bar */
-
 .nav{
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
     border-bottom: 1px solid lightgray;
+    grid-area: nav;
 }
 .nav-content{
     display: inline-block;
     font-size: 2em;
 }
-.btns{
-    color: white;
-    background-color:#003C71 ;
-    border: none;
-    padding:10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: grey 1px solid;
-    font-family: 'Saira', sans-serif;
-    font-size: 1em;
-    width:5em;
-    height:5%;
-}
-.btns:hover{
-    background-color: #1B9CE2;
-    color:white;
-  }
-.submit-btn{
-    text-align: center;
-}
 
-/* Page Grid */
 
-.page-grid{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 150px 300px 450px;
-}
 .calendar1{
-    grid-column: 1/2;
-    grid-row: 1/2;
     text-align: center;
-    padding-top: 5%;
-    
+    padding-top: 8%;
+    grid-area:viewBtn;
 }
 .calendar2{
     background: lightblue;
@@ -266,31 +257,21 @@ body{
     grid-row: 2/4;
 }
 .floorplan1{
-    /* background: lightcyan; */
-    grid-column: 2/3;
-    grid-row: 1/2;
     text-align: center;
+    margin-right: 30%;
+    grid-area: roomBtn;
 }
 .floorplan2{
     grid-column: 2/3;
     grid-row: 2/3;
     text-align: center;
 }
-.booking{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    font-size: 1.5em;
-    padding: 5%;
-}
 .viewButton{
     width:100px;
     font-size: large;
     font-weight: bold;
 }
-p{
-    font-size: 1.5em;
-    font-weight: bold;
-}
+
 ul{
     width:50%;
     margin-left: auto;
@@ -301,9 +282,7 @@ li{
     padding: 2%;
     font-size: large;
 }
-/* .room-content{
-    text-align: left;
-} */
+
 .input-box{
     font-size: 1em;
 }
