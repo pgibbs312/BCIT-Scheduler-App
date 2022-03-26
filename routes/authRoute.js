@@ -14,6 +14,11 @@ router.get("/register", forwardAuthenticated, (req, res) => {
     res.render("register", { message: req.flash('message') } )
 });
 
+router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/auth/login");
+});
+
 router.post("/register", (req, res) => {
     User.findOne({email: req.body.email})
         .then(user => {
