@@ -11,28 +11,31 @@
 
 <body>
     <div class="landing-page">
-        <img class="logo" src="../BCIT_logo.png" alt="bcit logo">
-        <h1>Login</h1>
-        <form action="/auth/login/local" method="POST">
 
+        <div class="heading">
+            <img class="logo" src="../BCIT_logo.png" alt="bcit logo">
+            <h1 id="description">Tech Hub Booking System</h1>
+            <h1 id="loginDes">Login</h1>
+        </div>
+
+        <form action="/auth/login/local" method="POST">
             <div class="container">
                 <!-- <label for="uname"><b>Username</b></label> -->
-                <div class="second">
-                    <span> Email: </span>
+          
+                    <span id="emailspan"> Email: </span>
                     <input type="email" placeholder="Enter Email" id="email" name="email" onkeyup="check(this)"
                         required>
-                </div>
+               
 
                 <!-- <label for="psw"><b>Password</b></label> -->
-                <div class="third">
-                    <span>Password: </span>
+               
+                    <span id="pwspan">Password: </span>
                     <input type="password" placeholder="Enter Password" name="password" id="pwInp" onkeyup="check(this)"
                         required>
-                </div>
+                
 
-                <div class="fourth">
                     <button id="login-btn" type="submit">Login</button>
-                </div>
+                
 
                 <!-- <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me

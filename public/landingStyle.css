@@ -1,20 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira&family=Sedgwick+Ave&display=swap');
+body{
+  background-image: url('DSCF1621-scaled.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+
 /* Bordered form */
 .landing-page{
   position:absolute;
-  top:40%;
+  top:50%;
   left:50%;
   transform: translate(-50%, -50%);
   font-family: 'Saira', sans-serif;
 }
+
+
+.heading{
+  display: grid;
+
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  grid-template-areas: "logo des"
+                       "logdes des"
+                       ;
+  background-color: white;
+  padding-left: 10%;
+  padding-top: 5%;
+  border-radius: 15px 15px 0px 0px;
+}
+.logo{
+  width:70px;
+  height:70px;
+  grid-area: logo;
+}
+#description{
+  grid-area: des;
+}
+#loginDes{
+  grid-area: logdes;
+  margin-block-start: 0.2em;
+  margin-block-end:0.2em;
+}
+
  /* Add padding to containers */
  .container {
-  padding: 16px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 40% 60%;
+  grid-template-rows: auto;
+  grid-template-areas: "emailspan email"
+                       "pwspan pwInp"
+                       "logbtn ."
+  ;
+  padding: 8%;
+  background-color: white;
 }
-.first{
+#emailspan{
+  grid-area: emailspan;
+  padding-top: 10%;
+}
+#pwspan{
+  grid-area: pwspan;
+  padding-top: 10%;
+}
+/* .first{
   grid-column: 1/2;
   grid-row:1/2 ;
 }
@@ -29,21 +77,19 @@
 .fourth{
   grid-column: 1/2;
   grid-row:4/5 ;
-}
+} */
 
 
-.logo{
-  width:70px;
-  height:70px;
-}
+
 h1 {
   color: #003C71;
 }
 
 form {
     border: 10px solid #f1f1f1;
-    width: 100%;
+    width: 95.8%;
     margin: auto;
+    border-radius: 0px 0px 15px 15px;
   }
   
   /* Full-width inputs */
@@ -58,9 +104,12 @@ form {
     border-right: 0px;
     border-bottom: 1px solid grey;
     box-sizing: border-box;
+
+
   }
   #pwInp{
       margin-bottom: 20px;
+      grid-area: pwInp;
   }
 
   #name {
@@ -79,6 +128,7 @@ form {
     border-bottom: 1px solid grey;
     box-sizing: border-box;
     padding: 12px 20px;
+    grid-area: email;
   }
 
   #register-btn {
@@ -107,7 +157,8 @@ form {
     border: grey 1px solid;
     font-family: 'Saira', sans-serif;
     font: 16px;
-    width:50%;
+    width:70%;
+    grid-area: logbtn
   }
   #login-btn:hover{
     background-color: #1B9CE2;
@@ -148,7 +199,7 @@ form {
   color:white;
 } */
 
-  /* Set a style for all buttons */
+  /* Set a style  all buttons */
   /* button {
     background-color: #000080;
     color: white;
