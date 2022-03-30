@@ -2,8 +2,11 @@
 body{
     padding-right: 5%;
     padding-left: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 10%;
     font-family: 'Saira', sans-serif;
+    background-image: url('DSCF1621-scaled.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 p{
     margin-block-start: 0.5em;
@@ -25,7 +28,9 @@ p{
                          "container color2 "
                          ;
     grid-gap: 5px;
-
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 20px;
 }
 
 /* calendar view */
@@ -35,10 +40,11 @@ p{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "time roomOne roomTwo roomThree ";
+    grid-template-areas: "time roomOne roomTwo roomThree roomFour ";
     padding-left: 30px;
 
     grid-area: container;
+    background-color: #fff;
 }
 .times {
     display: grid;
@@ -69,6 +75,8 @@ p{
     display: grid;
     grid-area: roomFour;
     height: 70px;
+    border: 1px solid black;
+
 }
 .roomFive {
     display: grid;

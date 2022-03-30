@@ -87,6 +87,23 @@
                 
             <% } %>
         </div>
+        <div class="roomFour">
+            <% let checkFour = false %>
+            <div class="roomNumber">Room <%=rooms[3].number%></div>
+            <% for (n in btimes) { %>
+                <% if (checkFour) { %>
+                    <div class="free">Free</div>
+                <% } %>
+                <% checkFour = true %>
+                <% for (i in bookings) { %> 
+                    <% if (bookings[i].roomNumber === rooms[3].number && bookings[i].time === btimes[n]) { %> 
+                        <div class="booked"><%=bookings[i].time%></div>
+                        <% checkFour = false %>
+                    <% } %>
+                <% } %>
+                
+            <% } %>
+        </div>
     </div>  <!--container end-->
 
     <div class="floorplan1">
