@@ -224,19 +224,30 @@
                     <option value="3">3</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="brithday">Date</label>
+                <input type="date" id="date" name="date">
+            </div>
             <button id="submit-btn" type="submit">Submit</button>
+            <div>
+                <strong id="rgstrPopupMessage" class="popupMsg">
+                    <em>
+                        <%=message%>
+                    </em>
+                </strong>
+            </div>
         </form>
     </div>
 
         
         
 </div>
-
-
-
-
-
-
-
 </body>
+<script type="text/javascript">
+
+    function closeHelpDiv() {
+        document.getElementById("rgstrPopupMessage").style.display = " none";
+    }
+
+</script>
 </html>
