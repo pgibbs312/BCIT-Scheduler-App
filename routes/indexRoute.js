@@ -11,7 +11,13 @@ router.get("/", forwardAuthenticated, (req, res) => {
 })
 
 router.get("/home", ensureAuthenticated, (req, res) => {
-    Booking.find({ })
+    const d = new Date();
+    let year = d.getFullYear()
+    let month = '0' + (d.getMonth() + 1)
+    let day = '0' + d.getDate()
+    let searchDate = `${year}-${month}-${day}`
+    console.log(searchDate)
+    Booking.find({date: searchDate})
         .then((bookings) => {
         Rooms.find({ })
             .then((rooms) => {
