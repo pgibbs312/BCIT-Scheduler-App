@@ -59,7 +59,7 @@ router.post("/book", (req, res) => {
                         check = false;
                         console.log('That time has already been booked.');
                         req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
-                        res.redirect('/home');
+                        res.redirect(`/home/${req.body.date}`);
                     }
                 }
                 if (check) {
@@ -73,7 +73,7 @@ router.post("/book", (req, res) => {
                     })
                     room.save()
                         .then((result) => {
-                            res.redirect("/home");
+                            res.redirect(`/home/${req.body.date}`);
                         })
                         .catch((error) => {
                             console.log(error);
@@ -86,9 +86,35 @@ router.post("/book", (req, res) => {
             }
         });
 });
+router.post("/home", (req, res) => {
+    console.log(`posted date: ${req.body.date}`);
+    router.get(`/home/${req.body.date}`, (req, res) => {
+        Booking.find({date: req.body.date})
+            .then((bookings) => {
+            Rooms.find({ })
+                .then((rooms) => {
+                    Time.find({ })
+                        .then((times) => {
+                            console.log(`bookings on post are: ${bookings}`)
+                            let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "timeholder"]
+                            res.render("index", {
+                                bookings: bookings,
+                                rooms: rooms,
+                                btimes: btimes,
+                                times: times,
+                                user: req.user,
+                                message: req.flash('message'),
+                            });
+                        });
+                });
+            });
+    })
+    res.redirect(`/home/${req.body.date}`);
+
+});
 router.get("/admin-rooms", ensureAuthenticated, (req, res) => {
     res.render("admin-rooms");
-})
+});
 
 router.post("/admin-rooms", (req, res) => {
     console.log(req.body.roomNumber);

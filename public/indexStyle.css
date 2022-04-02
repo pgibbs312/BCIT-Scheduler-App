@@ -178,7 +178,7 @@ a {
     grid-template-columns:31.5% 31.5% 31.5%;
     grid-template-rows: 90% 20%;
     grid-template-areas: 'bcit para .'
-                         'today week month';
+                         'search search search';
     padding-left: 30px;
     grid-area: logoGrid;
 }
@@ -214,6 +214,10 @@ a {
     grid-area: month;
     font-family: 'Saira', sans-serif;
   
+}
+.search {
+    grid-area: search;
+    justify-content: center;
 }
 .viewButton{
     margin: 2px;

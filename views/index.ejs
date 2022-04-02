@@ -23,12 +23,20 @@
 
     </div>
 
-    <div class="calendar1">
-        <a href="#" class="previous round">&#8249;</a>
-        <a href="#" class="next round">&#8250;</a>
+    <div class="serach">
+        <form action="/home" method="POST">
+            <div class="form-group">
+                <label for="date">Search for a date</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <button id="submit-btn" type="submit">Submit</button>
+            
+        </form>
     </div>
-
-    <div class="container">
+    <a href="#" class="previous round">&#8249;</a>
+    <a href="#" class="next round">&#8250;</a>
+        
+        <div class="container">
         <div class="times">
             <div class="timeHeader"><b>Times</b></div>
             <% for (i in times) { %>
@@ -224,7 +232,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="brithday">Date</label>
+                <label for="date">Date</label>
                 <input type="date" id="date" name="date">
             </div>
             <button id="submit-btn" type="submit">Submit</button>
