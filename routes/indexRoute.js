@@ -48,30 +48,43 @@ router.get("/book", ensureAuthenticated, (req, res) => {
 });
 
 router.post("/book", (req, res) => {
-    Booking.findOne({date: req.body.date})
+    Booking.find({date: req.body.date})
         .then(day => {
-            console.log(`day is: ${day.date}`)
-            if (req.body.roomNumber && req.body.time && day.date == true) {
-                console.log('That time has already been booked.');
-                req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
-                res.redirect('/home');
-            } else {
-                const room = new Booking({
-                    name: req.body.name,
-                    roomNumber: req.body.roomNumber,
-                    time: req.body.time,
-                    length: req.body.length,
-                    date: req.body.date,
-                })
-                room.save()
-                    .then((result) => {
-                        res.redirect("/home");
+            try {
+                let check = true;
+                console.log('try block');
+                // for loop to check all of the bookings against the requested booking
+                for (let i = 0; i < day.length; i ++) {
+                    if (req.body.roomNumber == day[i].roomNumber && req.body.time == day[i].time && req.body.date == day[i].date) {
+                        check = false;
+                        console.log('That time has already been booked.');
+                        req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
+                        res.redirect('/home');
+                    }
+                }
+                if (check) {
+                    console.log('passed if statement, booking...');
+                    const room = new Booking({
+                        name: req.body.name,
+                        roomNumber: req.body.roomNumber,
+                        time: req.body.time,
+                        length: req.body.length,
+                        date: req.body.date,
                     })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    room.save()
+                        .then((result) => {
+                            res.redirect("/home");
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                    }
+
             }
-        })
+            catch(error) {
+                console.log(error);
+            }
+        });
 });
 router.get("/admin-rooms", ensureAuthenticated, (req, res) => {
     res.render("admin-rooms");
