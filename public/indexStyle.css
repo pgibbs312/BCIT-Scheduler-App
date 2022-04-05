@@ -49,7 +49,8 @@ a {
     grid-template-areas: "nav       nav "
                          "viewBtn roomBtn"
                          "container map"
-                         "container color2"
+                         "container map"
+                         "container map"
                          "container color2 "
                          ;
     grid-gap: 5px;
@@ -186,6 +187,9 @@ a {
     width: 80px;
     height: 80px;
     grid-area: bcit;
+    background-image: url('BCIT_logo.png') ;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 #logodiv{
     display:grid;
@@ -226,9 +230,12 @@ a {
 
 /* map view */
 #map{
-    width: 80%;
+    width: 100%;
     height: 100%;
     grid-area: map;
+    background-image: url('floorplan.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 #color2{
    
