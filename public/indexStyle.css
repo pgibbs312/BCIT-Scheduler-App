@@ -32,6 +32,29 @@ p{
     padding: 5%;
     border-radius: 20px;
 }
+/* changing grid view for smaller screen */
+@media only screen and (max-width: 900px) {
+    .wrapper{
+        display: grid;
+    
+        
+        grid-template-rows: auto;
+        grid-template-areas: "nav "
+                             "viewBtn"
+                             "roomBtn"
+                             "container"
+                             "container "
+                             "container "
+                             "map"
+                             "color2"
+                             "color2"
+                             ;
+        grid-gap: 10px;
+        background-color: #fff;
+        padding: 10%;
+        border-radius: 20px;
+    }
+  }
 
 /* calendar view */
 .container{
