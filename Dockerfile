@@ -1,14 +1,14 @@
 FROM ubuntu:18.04
-
 LABEL maintainer="CIT Computing"
 
-RUN apt-get update -y 
-RUN apt-get upgrade -y
+WORKDIR /app
+COPY ./* /app
 
-WORKDIR /BCIT-Scheduler-App
+RUN apt update
+RUN apt install nodejs -y
+RUN apt install npm -y
 
-RUN npm install -y
 
-CMD ["npm", "start"]
 
-EXPOSE 80 443
+CMD ["node", "server.js"]
+
