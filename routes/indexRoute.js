@@ -11,7 +11,13 @@ router.get("/", forwardAuthenticated, (req, res) => {
 })
 
 router.get("/home", ensureAuthenticated, (req, res) => {
-    Booking.find({ })
+    const d = new Date();
+    let year = d.getFullYear()
+    let month = '0' + (d.getMonth() + 1)
+    let day = '0' + d.getDate()
+    let searchDate = `${year}-${month}-${day}`
+    console.log(searchDate)
+    Booking.find({date: searchDate})
         .then((bookings) => {
         Rooms.find({ })
             .then((rooms) => {
@@ -24,11 +30,37 @@ router.get("/home", ensureAuthenticated, (req, res) => {
                             btimes: btimes,
                             times: times,
                             user: req.user,
+                            message: req.flash('message'),
                         });
                     });
             });
         });
 });
+router.get("/home/:date", ensureAuthenticated, (req, res) => {
+    let date = req.params.name;
+
+    let id = req.query.date;
+    console.log(`id is: ${id}`)
+
+    Booking.find({date: id})
+    .then((bookings) => {
+        Rooms.find({ })
+            .then((rooms) => {
+                Time.find({ })
+                    .then((times) => {
+                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "timeholder"]
+                        res.render("index", {
+                            bookings: bookings,
+                            rooms: rooms,
+                            btimes: btimes,
+                            times: times,
+                            user: req.user,
+                            message: req.flash('message'),
+                        });
+                    });
+            });
+        });
+})
 
 router.get("/book", ensureAuthenticated, (req, res) => {
     Rooms.find({ })
@@ -41,23 +73,74 @@ router.get("/book", ensureAuthenticated, (req, res) => {
 });
 
 router.post("/book", (req, res) => {
-    const room = new Booking({
-        name: req.body.name,
-        roomNumber: req.body.roomNumber,
-        time: req.body.time,
-        length: req.body.length,
-    })
-    room.save()
-        .then((result) => {
-            res.redirect("/home");
-        })
-        .catch((error) => {
-            console.log(error);
+    Booking.find({date: req.body.date})
+        .then(day => {
+            try {
+                let check = true;
+                console.log('try block');
+                // for loop to check all of the bookings against the requested booking
+                for (let i = 0; i < day.length; i ++) {
+                    if (req.body.roomNumber == day[i].roomNumber && req.body.time == day[i].time && req.body.date == day[i].date) {
+                        check = false;
+                        console.log('That time has already been booked.');
+                        req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
+                        res.redirect(`/home/${req.body.date}`);
+                    }
+                }
+                if (check) {
+                    console.log('passed if statement, booking...');
+                    const room = new Booking({
+                        name: req.body.name,
+                        roomNumber: req.body.roomNumber,
+                        time: req.body.time,
+                        length: req.body.length,
+                        date: req.body.date,
+                    })
+                    room.save()
+                        .then((result) => {
+                            res.redirect(`/home`);
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                    }
+
+            }
+            catch(error) {
+                console.log(error);
+            }
         });
 });
+// router.post("/home", (req, res) => {
+//     console.log(`posted date: ${req.body.date}`);
+//     console.log(typeof(req.body.date))
+//     router.get(`/home/${req.body.date}`, (req, res) => {
+//         Booking.find({date: req.body.date})
+//             .then(bookings => {
+//                 Rooms.find({ })
+//                     .then((rooms) => {
+//                         Time.find({ })
+//                             .then((times) => {
+//                                 console.log(`post home date: ${bookings}`)
+//                                 let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "timeholder"]
+//                                 res.render("index", {
+//                                     bookings: bookings,
+//                                     rooms: rooms,
+//                                     btimes: btimes,
+//                                     times: times,
+//                                     user: req.user,
+//                                     message: req.flash('message'),
+//                                 });
+//                             });
+//                     });
+//             });
+//     })
+    //res.redirect(`/home/${req.body.date}`);
+
+//});
 router.get("/admin-rooms", ensureAuthenticated, (req, res) => {
     res.render("admin-rooms");
-})
+});
 
 router.post("/admin-rooms", (req, res) => {
     console.log(req.body.roomNumber);
