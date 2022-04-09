@@ -19,22 +19,21 @@
         <div class="nav-content" id="todayDate">
             <script> document.write(new Date().toDateString()); </script>
         </div>
-        <a href="/logout" id="Logout">Log out</a>
+        <a href="/logout" id="logout">Log out</a>
 
     </div>
 
-    <div class="serach">
+    <div id="search">
         <form action="/home/date">
             <div class="form-group">
                 <label for="date">Search for a date</label>
                 <input type="date" id="date" name="date">
-                <input type="submit" id="value" value="Submit">
             </div>
+            <input type="submit" id="value" value="Submit">
          </form>
-            
+
     </div>
-    <a href="#" class="previous round">&#8249;</a>
-    <a href="#" class="next round">&#8250;</a>
+ 
         
         <div class="container">
         <div class="times">
@@ -114,7 +113,7 @@
     </div>  <!--container end-->
 
     <div class="floorplan1">
-        <p>5th Floor of Tech Hub</p>
+        <h2 id="5thFloor">5th Floor of Tech Hub</h2>
         <ul>
             <li><a href="#pop1">Room582</a></li>
             <div class="pop-up" id="pop1">

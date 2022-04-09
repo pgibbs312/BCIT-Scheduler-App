@@ -38,7 +38,8 @@ a {
   .round {
     border-radius: 50%;
   }
-  
+
+
 
 /* parent div */
 .wrapper{
@@ -47,7 +48,7 @@ a {
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
     grid-template-areas: "nav       nav "
-                         "viewBtn roomBtn"
+                         "search roomBtn"
                          "container map"
                          "container map"
                          "container map"
@@ -186,7 +187,7 @@ a {
     border-radius: 5px;
     border: grey 1px solid;
     font-family: 'Saira', sans-serif;
-    height: 45%;
+    height: 20%;
     grid-area: logout;
     margin-top: 2%;
 }
@@ -201,8 +202,7 @@ a {
     display: grid;
     grid-template-columns:31.5% 31.5% 31.5%;
     grid-template-rows: 90% 20%;
-    grid-template-areas: 'bcit para .'
-                         'search search search';
+    grid-template-areas: 'bcit para .';
     padding-left: 30px;
     grid-area: logoGrid;
 }
@@ -242,9 +242,11 @@ a {
     font-family: 'Saira', sans-serif;
   
 }
-.search {
+#search {
     grid-area: search;
-    justify-content: center;
+    padding-left: 6%;
+    padding-top: 10%;
+
 }
 .viewButton{
     margin: 2px;
@@ -326,7 +328,11 @@ a {
 .floorplan1{
     text-align: center;
     margin-right: 30%;
+    margin-left: 10%;
     grid-area: roomBtn;
+}
+.floorplan1 h2{
+    margin-left: 12%;
 }
 .floorplan2{
     grid-column: 2/3;
@@ -392,12 +398,12 @@ li{
     text-align: right;
     padding:20px;
     box-sizing: border-box;
-    opacity:0;
+    display:none;
     transition: all 0.5s;
     z-index: 4;
 }
 .pop-up:target{
-    opacity: 1;
+    display: block;
 }
 .pop-up:target + .dim{
     opacity: 1;
@@ -435,4 +441,3 @@ li{
     font-size: medium;
     font-weight: bold;
 }
-
