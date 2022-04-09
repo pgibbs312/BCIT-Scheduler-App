@@ -23,7 +23,7 @@ router.get("/home", ensureAuthenticated, (req, res) => {
             .then((rooms) => {
                 Time.find({ })
                     .then((times) => {
-                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "timeholder"]
+                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "13:00pm", "14:00pm", "15:00pm", "16:00pm", "17:00pm", "timeholder"]
                         res.render("index", {
                             bookings: bookings,
                             rooms: rooms,
@@ -31,6 +31,7 @@ router.get("/home", ensureAuthenticated, (req, res) => {
                             times: times,
                             user: req.user,
                             message: req.flash('message'),
+                            searchDate: searchDate,
                         });
                     });
             });
@@ -48,7 +49,7 @@ router.get("/home/:date", ensureAuthenticated, (req, res) => {
             .then((rooms) => {
                 Time.find({ })
                     .then((times) => {
-                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "timeholder"]
+                        let btimes = ["9:00am", "10:00am", "11:00am", "12:00pm", "13:00pm", "14:00pm", "15:00pm", "16:00pm", "17:00pm", "timeholder"]
                         res.render("index", {
                             bookings: bookings,
                             rooms: rooms,
@@ -56,6 +57,7 @@ router.get("/home/:date", ensureAuthenticated, (req, res) => {
                             times: times,
                             user: req.user,
                             message: req.flash('message'),
+                            searchDate: id,
                         });
                     });
             });
@@ -72,6 +74,19 @@ router.get("/book", ensureAuthenticated, (req, res) => {
         });
 });
 
+function getNext(time){
+    getTime = parseInt(time) + 1
+    if (getTime > 9 && getTime < 12){
+        morning = "am"
+    }
+    else{
+        morning = "pm"
+    }
+    convertStr = String(getTime+":00"+morning)
+    console.log(convertStr)
+    return convertStr
+}
+
 router.post("/book", (req, res) => {
     Booking.find({date: req.body.date})
         .then(day => {
@@ -79,14 +94,35 @@ router.post("/book", (req, res) => {
                 let check = true;
                 console.log('try block');
                 // for loop to check all of the bookings against the requested booking
-                for (let i = 0; i < day.length; i ++) {
-                    if (req.body.roomNumber == day[i].roomNumber && req.body.time == day[i].time && req.body.date == day[i].date) {
-                        check = false;
-                        console.log('That time has already been booked.');
-                        req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
-                        res.redirect(`/home/${req.body.date}`);
+                if (req.body.length == 1) {
+                    for (let i = 0; i < day.length; i ++) {
+                        if (req.body.roomNumber == day[i].roomNumber && req.body.time == day[i].time && req.body.date == day[i].date) {
+                            check = false;
+                            console.log('That time has already been booked.');
+                            req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
+                            res.redirect(`/home/date?date=${req.body.date}`);
+                        }    
                     }
                 }
+                if (req.body.length == 2) {
+                    for (let i = 0; i < day.length; i ++) {
+                        if (req.body.roomNumber == day[i].roomNumber && req.body.time == day[i].time && req.body.date == day[i].date) {
+                            check = false;
+                            console.log('That time has already been booked.');
+                            req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} has already been booked.`);
+                            res.redirect(`/home/date?date=${req.body.date}`);
+                        }  
+                        if (req.body.roomNumber == day[i].roomNumber && getNext(req.body.time) == day[i].time && req.body.date == day[i].date) {
+                            check = false;
+                            console.log('That time has already been booked.');
+                            req.flash('message', `A booking for room ${req.body.roomNumber} for ${req.body.time} or ${getNext(req.body.time)} has already been booked.`);
+                            res.redirect(`/home/date?date=${req.body.date}`);
+                        }   
+                    }
+                }
+                 
+                
+                
                 if (check) {
                     console.log('passed if statement, booking...');
                     const room = new Booking({
@@ -95,7 +131,20 @@ router.post("/book", (req, res) => {
                         time: req.body.time,
                         length: req.body.length,
                         date: req.body.date,
-                    })
+                    });
+                    if (req.body.length == 2){
+                        const room2 = new Booking({
+                            name: req.body.name,
+                            roomNumber: req.body.roomNumber,
+                            time: getNext(req.body.time),
+                            length: req.body.length,
+                            date: req.body.date,
+                        });
+                        
+                        room2.save()
+                        
+                    }
+
                     room.save()
                         .then((result) => {
                             res.redirect(`/home`);
@@ -103,9 +152,11 @@ router.post("/book", (req, res) => {
                         .catch((error) => {
                             console.log(error);
                         });
-                    }
+                    req.flash('message', `Booking confirmed for room: ${req.body.roomNumber} at ${req.body.time} for ${req.body.length} hour(s) on ${req.body.date}`)
+                }
 
             }
+
             catch(error) {
                 console.log(error);
             }

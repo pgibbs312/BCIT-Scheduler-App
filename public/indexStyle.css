@@ -248,6 +248,10 @@ a {
     padding-top: 10%;
 
 }
+#showingDate{
+    margin: 5%;
+    font-size:  1.5em;
+}
 .viewButton{
     margin: 2px;
 
