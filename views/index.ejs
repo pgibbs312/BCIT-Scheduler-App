@@ -1,254 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/indexStyle.css">
-    
-    <title>BCIT Study Room Scheduler</title>    
+
+    <title>BCIT Study Room Scheduler</title>
 </head>
+
 <body>
 
-    
-<div class="wrapper">
-    <div class="nav">
-        <div id="logo"></div>
-        <p class="nav-content">BCIT Room Booking System</p>
-        <p class="nav-content">Today's Date:</p>
-        <div class="nav-content" id="todayDate">
-            <script> document.write(new Date().toDateString()); </script>
-        </div>
-        <a href="/logout" id="logout">Log out</a>
 
-    </div>
-
-    <div id="search">
-        <form action="/home/date">
-            <div class="form-group">
-                <label for="date">Search for a date</label>
-                <input type="date" id="date" name="date">
+    <div class="wrapper">
+        <div class="nav">
+            <div id="logo"></div>
+            <p class="nav-content">BCIT Room Booking System</p>
+            <p class="nav-content">Today's Date:</p>
+            <div class="nav-content" id="todayDate">
+                <script> document.write(new Date().toDateString()); </script>
             </div>
-            <input type="submit" id="value" value="Submit">
-         </form>
+            <a href="/logout" id="logout">Log out</a>
 
-         <div id="showingDate">Showing Availabilities for: <%=searchDate %></div>
-    </div>
- 
-        
+        </div>
+
+        <div id="search">
+            <form action="/home/date">
+                <div class="form-group">
+                    <label for="date">Search for a date</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <input type="submit" id="value" value="Submit">
+            </form>
+
+            <div id="showingDate">Showing Availabilities for: <%=searchDate %>
+            </div>
+            <span> Your booking:  </span> <img src="../green.png" alt="green">
+        </div>
+
+
         <div class="container">
-        <div class="times">
-            <div class="timeHeader"><b>Times</b></div>
-            <% for (i in times) { %>
-                <div class="timeTwo"><%=times[i].time%></div>
-            <% } %>
-        </div>
-        <div class="roomOne">
-            <% let check = false %>
-            <div class="roomNumber">Room <%=rooms[0].number%></div>
-            <% for (n in btimes) { %>
-                <% if (check) { %>
-                <div class="free">Free</div>
-                <% } %>
-                <% check = true %>
-                <% for (i in bookings) { %> 
-                    <% if (bookings[i].roomNumber === rooms[0].number && bookings[i].time === btimes[n]) { %> 
-                        <div class="booked"><%=bookings[i].time%></div>
-                        <% check = false %>
+            <div class="times">
+                <div class="timeHeader"><b>Times</b></div>
+                <% for (i in times) { %>
+                    <div class="timeTwo">
+                        <%=times[i].time%>
+                    </div>
                     <% } %>
-                <% } %>
-                
-            <% } %>
-        </div>
-        <div class="roomTwo">
-            <% let checkTwo = false %>
-            <div class="roomNumber">Room <%=rooms[1].number%></div>
-            <% for (n in btimes) { %>
-                <% if (checkTwo) { %>
-                    <div class="free">Free</div>
-                <% } %>
-                <% checkTwo = true %>
-                <% for (i in bookings) { %> 
-                    <% if (bookings[i].roomNumber === rooms[1].number && bookings[i].time === btimes[n]) { %> 
-                        <div class="booked"><%=bookings[i].time%></div>
-                        <% checkTwo = false %>
-                    <% } %>
-                <% } %>
-                
-            <% } %>
-        </div>
-        <div class="roomThree">
-            <% let checkThree = false %>
-            <div class="roomNumber">Room <%=rooms[2].number%></div>
-            <% for (n in btimes) { %>
-                <% if (checkThree) { %>
-                    <div class="free">Free</div>
-                <% } %>
-                <% checkThree = true %>
-                <% for (i in bookings) { %> 
-                    <% if (bookings[i].roomNumber === rooms[2].number && bookings[i].time === btimes[n]) { %> 
-                        <div class="booked"><%=bookings[i].time%></div>
-                        <% checkThree = false %>
-                    <% } %>
-                <% } %>
-                
-            <% } %>
-        </div>
-        <div class="roomFour">
-            <% let checkFour = false %>
-            <div class="roomNumber">Room <%=rooms[3].number%></div>
-            <% for (n in btimes) { %>
-                <% if (checkFour) { %>
-                    <div class="free">Free</div>
-                <% } %>
-                <% checkFour = true %>
-                <% for (i in bookings) { %> 
-                    <% if (bookings[i].roomNumber === rooms[3].number && bookings[i].time === btimes[n]) { %> 
-                        <div class="booked"><%=bookings[i].time%></div>
-                        <% checkFour = false %>
-                    <% } %>
-                <% } %>
-                
-            <% } %>
-        </div>
-    </div>  <!--container end-->
-
-    <div class="floorplan1">
-        <h2 id="5thFloor">5th Floor of Tech Hub</h2>
-        <ul>
-            <li><a href="#pop1">Room582</a></li>
-            <div class="pop-up" id="pop1">
-                <a href="#a">
-                    <p class="close">Close</p>
-                </a>
-                <img class="room-img" src="../room582.jpg" alt="room image">
-                <p class="room-num">Room 582</p>
-                <div class="contents">
-                    <p>- Need FOIL ID card to enter</p>
-                    <p>- 40" LCD display</p>
-                    <p>- Laptop hook up</p>
-                    <p>- Writing Surface</p>
-                    <p>- Capacity: 5</p>
-                </div>
             </div>
-            <div class="dim"></div>
-
-            <li><a href="#pop2">Room583</a></li>
-            <div class="pop-up" id="pop2">
-                <a href="#a">
-                    <p class="close">Close</p>
-                </a>
-                <img class="room-img" src="../room583.jpg" alt="room image">
-                <p class="room-num">Room 583</p>
-                <div class="contents">
-                    <p>- Need FOIL ID card to enter</p>
-                    <p>- 40" LCD display</p>
-                    <p>- Laptop hook up</p>
-                    <p>- Writing Surface</p>
-                    <p>- Capacity: 5</p>
-                </div>
+            <div class="roomOne">
+                <% let check=false %>
+                    <div class="roomNumber">Room <%=rooms[0].number%>
+                    </div>
+                    <% for (n in btimes) { %>
+                        <% if (check) { %>
+                            <div class="free">Free</div>
+                            <% } %>
+                                <% check=true %>
+                                    <% for (i in bookings) { %>
+                                        <% if (bookings[i].roomNumber===rooms[0].number && bookings[i].time===btimes[n])
+                                            { %>
+                                     
+                                            <% if (bookings[i].name===user) { %>
+                                                <div class="booked" style="background-color: green;">
+                                                    <%=bookings[i].time%>
+                                                </div>
+                                                <% check=false %>
+                                                    <%} else { %>
+                                                        <div class="booked">
+                                                            <%=bookings[i].time%>
+                                                        </div>
+                                                        <% check=false %>
+                                                            <% } %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <% } %>
             </div>
-            <div class="dim"></div>
-
-            <li><a href="#pop3">Room586</a></li>
-            <div class="pop-up" id="pop3">
-                <a href="#a">
-                    <p class="close">Close</p>
-                </a>
-                <img class="room-img" src="../room582.jpg" alt="room image">
-                <p class="room-num">Room 586</p>
-                <div class="contents">
-                    <p>- Need FOIL ID card to enter</p>
-                    <p>- 40" LCD display</p>
-                    <p>- Laptop hook up</p>
-                    <p>- Writing Surface</p>
-                    <p>- Capacity: 5</p>
-                </div>
+            <div class="roomTwo">
+                <% let checkTwo=false %>
+                    <div class="roomNumber">Room <%=rooms[1].number%>
+                    </div>
+                    <% for (n in btimes) { %>
+                        <% if (checkTwo) { %>
+                            <div class="free">Free</div>
+                            <% } %>
+                                <% checkTwo=true %>
+                                    <% for (i in bookings) { %>
+                                        <% if (bookings[i].roomNumber===rooms[1].number && bookings[i].time===btimes[n])
+                                            { %>
+                        
+                                                <% if (bookings[i].name===user) { %>
+                                                    <div class="booked" style="background-color: green;">
+                                                        <%=bookings[i].time%>
+                                                    </div>
+                                                    <% checkTwo=false %>
+                                                        <%} else { %>
+                                                            <div class="booked">
+                                                                <%=bookings[i].time%>
+                                                            </div>
+                                                            <% checkTwo=false %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <% } %>
+                                                                            <% } %>
             </div>
-            <div class="dim"></div>
-
-            <li><a href="#pop4">Room587</a></li>
-            <div class="pop-up" id="pop4">
-                <a href="#a">
-                    <p class="close">Close</p>
-                </a>
-                <img class="room-img" src="../room583.jpg" alt="room image">
-                <p class="room-num">Room 587</p>
-                               <div class="contents">
-                    <p>- Need FOIL ID card to enter</p>
-                    <p>- 40" LCD display</p>
-                    <p>- Laptop hook up</p>
-                    <p>- Writing Surface</p>
-                    <p>- Capacity: 5</p>
-                </div>
-            
+            <div class="roomThree">
+                <% let checkThree=false %>
+                    <div class="roomNumber">Room <%=rooms[2].number%>
+                    </div>
+                    <% for (n in btimes) { %>
+                        <% if (checkThree) { %>
+                            <div class="free">Free</div>
+                            <% } %>
+                                <% checkThree=true %>
+                                    <% for (i in bookings) { %>
+                                        <% if (bookings[i].roomNumber===rooms[2].number && bookings[i].time===btimes[n])
+                                            { %>
+                                                <% if (bookings[i].name===user) { %>
+                                                    <div class="booked" style="background-color: green;">
+                                                        <%=bookings[i].time%>
+                                                    </div>
+                                                    <% checkThree=false %>
+                                                        <%} else { %>
+                                                            <div class="booked">
+                                                                <%=bookings[i].time%>
+                                                            </div>
+                                                            <% checkThree=false %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <% } %>
+                                                                            <% } %>
             </div>
-            <div class="dim"></div>
-       
+            <div class="roomFour">
+                <% let checkFour=false %>
+                    <div class="roomNumber">Room <%=rooms[3].number%>
+                    </div>
+                    <% for (n in btimes) { %>
+                        <% if (checkFour) { %>
+                            <div class="free">Free</div>
+                            <% } %>
+                                <% checkFour=true %>
+                                    <% for (i in bookings) { %>
+                                        <% if (bookings[i].roomNumber===rooms[3].number && bookings[i].time===btimes[n])
+                                            { %>
+                                                <% if (bookings[i].name===user) { %>
+                                                    <div class="booked" style="background-color: green;">
+                                                        <%=bookings[i].time%>
+                                                    </div>
+                                                    <% checkFour=false %>
+                                                        <%} else { %>
+                                                            <div class="booked">
+                                                                <%=bookings[i].time%>
+                                                            </div>
+                                                            <% checkFour=false %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <% } %>
+                                                                            <% } %>
+            </div>
+        </div>
+        <!--container end-->
+
+        <div class="floorplan1">
+            <h2 id="5thFloor">5th Floor of Tech Hub</h2>
+            <ul>
+                <li><a href="#pop1">Room582</a></li>
+                <div class="pop-up" id="pop1">
+                    <a href="#a">
+                        <p class="close">Close</p>
+                    </a>
+                    <img class="room-img" src="../room582.jpg" alt="room image">
+                    <p class="room-num">Room 582</p>
+                    <div class="contents">
+                        <p>- Need FOIL ID card to enter</p>
+                        <p>- 40" LCD display</p>
+                        <p>- Laptop hook up</p>
+                        <p>- Writing Surface</p>
+                        <p>- Capacity: 5</p>
+                    </div>
+                </div>
+                <div class="dim"></div>
+
+                <li><a href="#pop2">Room583</a></li>
+                <div class="pop-up" id="pop2">
+                    <a href="#a">
+                        <p class="close">Close</p>
+                    </a>
+                    <img class="room-img" src="../room583.jpg" alt="room image">
+                    <p class="room-num">Room 583</p>
+                    <div class="contents">
+                        <p>- Need FOIL ID card to enter</p>
+                        <p>- 40" LCD display</p>
+                        <p>- Laptop hook up</p>
+                        <p>- Writing Surface</p>
+                        <p>- Capacity: 5</p>
+                    </div>
+                </div>
+                <div class="dim"></div>
+
+                <li><a href="#pop3">Room586</a></li>
+                <div class="pop-up" id="pop3">
+                    <a href="#a">
+                        <p class="close">Close</p>
+                    </a>
+                    <img class="room-img" src="../room582.jpg" alt="room image">
+                    <p class="room-num">Room 586</p>
+                    <div class="contents">
+                        <p>- Need FOIL ID card to enter</p>
+                        <p>- 40" LCD display</p>
+                        <p>- Laptop hook up</p>
+                        <p>- Writing Surface</p>
+                        <p>- Capacity: 5</p>
+                    </div>
+                </div>
+                <div class="dim"></div>
+
+                <li><a href="#pop4">Room587</a></li>
+                <div class="pop-up" id="pop4">
+                    <a href="#a">
+                        <p class="close">Close</p>
+                    </a>
+                    <img class="room-img" src="../room583.jpg" alt="room image">
+                    <p class="room-num">Room 587</p>
+                    <div class="contents">
+                        <p>- Need FOIL ID card to enter</p>
+                        <p>- 40" LCD display</p>
+                        <p>- Laptop hook up</p>
+                        <p>- Writing Surface</p>
+                        <p>- Capacity: 5</p>
+                    </div>
+
+                </div>
+                <div class="dim"></div>
 
 
 
-        </ul>
+
+            </ul>
+        </div>
+
+
+        <div id="map"></div>
+
+        <div id="color2">
+
+            <p>Book Study Room</p>
+            <form action="/book" method="POST">
+                <div class="form-group">
+                    <!-- <label for="name"><b>Name: </b></label> -->
+                    <!-- <input type="name" placeholder="<%=user%>" id="name" name="name" required style="display:none"> -->
+                    <select id="name" name="name" style="display:none">
+                        <option value="<%=user%>">
+                            <%=user%>
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomNumber"><b>Room Number: </b></label>
+                    <select id="roomNumber" name="roomNumber">
+                        <% for (i in rooms) { %>
+                            <option value="<%=rooms[i].number%>">
+                                <%=rooms[i].number%>
+                            </option>
+                            <% } %>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date"><b>Date</b></label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <div class="form-group">
+                    <lable for="time"><b>Time: </b></lable>
+                    <select id="time" name="time">
+                        <option value="9:00am">9:00</option>
+                        <option value="10:00am">10:00</option>
+                        <option value="11:00am">11:00</option>
+                        <option value="12:00pm">12:00</option>
+                        <option value="13:00pm">13:00</option>
+                        <option value="14:00pm">14:00</option>
+                        <option value="15:00pm">15:00</option>
+                        <option value="16:00pm">16:00</option>
+                        <option value="17:00pm">17:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <lable for="length"><b>Hours Duration: </b></lable>
+                    <select id="length" name="length">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+
+
+
+                <button id="submit-btn" type="submit">Submit</button>
+                <div>
+                    <strong id="rgstrPopupMessage" class="popupMsg">
+                        <em>
+                            <%=message%>
+                        </em>
+                    </strong>
+                </div>
+            </form>
+        </div>
+
+
+
     </div>
-
-
-    <div id="map"></div>
-    
-    <div id="color2">  
-
-        <p>Book Study Room</p>
-        <form action="/book" method="POST">
-            <div class="form-group">
-                <label for="name"><b>Name: </b></label>
-                <input type="name" placeholder="Enter Your Name" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="roomNumber"><b>Room Number: </b></label>
-                <select id="roomNumber" name ="roomNumber">
-                    <% for (i in rooms) { %>
-                        <option value="<%=rooms[i].number%>"><%=rooms[i].number%></option> 
-                    <% } %>
-                </select>
-            </div>
-            <div class="form-group">
-                <lable for="time"><b>Time: </b></lable>
-                <select id="time" name="time">
-                    <option value="9:00am">9:00</option>
-                    <option value="10:00am">10:00</option>
-                    <option value="11:00am">11:00</option>
-                    <option value="12:00pm">12:00</option>
-                    <option value="13:00pm">13:00</option>
-                    <option value="14:00pm">14:00</option>
-                    <option value="15:00pm">15:00</option>
-                    <option value="16:00pm">16:00</option>
-                    <option value="17:00pm">17:00</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <lable for="length"><b>Hours Duration: </b></lable>
-                <select id="length" name="length">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date">
-            </div>
-            <button id="submit-btn" type="submit">Submit</button>
-            <div>
-                <strong id="rgstrPopupMessage" class="popupMsg">
-                    <em>
-                        <%=message%>
-                    </em>
-                </strong>
-            </div>
-        </form>
-    </div>
-
-        
-        
-</div>
 </body>
 <script type="text/javascript">
 
@@ -257,4 +319,5 @@
     }
 
 </script>
+
 </html>
