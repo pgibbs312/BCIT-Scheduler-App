@@ -13,6 +13,12 @@ body{
     padding-top: 0;
     padding-left: 0;
   }
+  .landing-page .fourth #register-btn{
+    position: absolute;
+    width: 20%;
+    right: 20%;
+    bottom: 28%;
+  }
 }
 
 /* Bordered form */
