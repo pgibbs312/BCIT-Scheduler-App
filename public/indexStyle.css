@@ -61,26 +61,95 @@ a {
 }
 /* changing grid view for smaller screen */
 @media only screen and (max-width: 900px) {
+    body{
+        padding-right: 2%;
+        padding-left: 2%;
+        padding-bottom: 5%;
+    }
+    .wrapper .nav #todayDate{
+        font-size: 1em;
+        padding-top: 15%;
+  
+    }
     .wrapper{
         display: grid;
     
-        
+        grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas: "nav "
-                             "viewBtn"
-                             "roomBtn"
+                             "search"
                              "container"
-                             "container "
-                             "container "
                              "map"
-                             "color2"
+                             "roomBtn"
                              "color2"
                              ;
-        grid-gap: 10px;
         background-color: #fff;
-        padding: 10%;
+        padding: 0;
         border-radius: 20px;
     }
+    .wrapper .nav .nav-content{
+        font-size: 1.5em;
+        padding-left: 2%;
+    }
+   
+    .wrapper .nav #logout{
+        position:absolute;
+        top:2%;
+        right:10%;
+        height: 3%;
+    }
+    .wrapper .nav #logo{
+        display: none;
+    }
+    .wrapper .container{
+        padding-left: 2%;
+    }
+    .wrapper #search{
+        padding-top: 2%;
+    }
+    .wrapper #color2{
+        padding-bottom: 5%;
+    }
+    .wrapper #map{
+        width: 85vw;
+        height: 30vh;
+    }
+    .wrapper #color2 p{
+        margin-block-start: 0em;
+    }
+    .wrapper .floorplan1 h2{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+    .wrapper .floorplan1 ul{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+    /* .wrapper .container .roomOne .booked{
+        margin: 2px;
+        width: 51.8px;
+        height: 72px;
+    }
+    .wrapper .container .roomOne{
+        margin: 2px;
+        width: 51.8px;
+        height: 72px;
+    }
+    .wrapper .container .roomTwo{
+        margin: 2px;
+        width: 51.8px;
+        height: 72px;
+    }
+    .wrapper .container .roomThree{
+        margin: 2px;
+        width: 51.8px;
+        height: 72px;
+    }
+    .wrapper .container .roomFour{
+        margin: 2px;
+        width: 51.8px;
+        height: 72px; 
+    }  */
   }
 
 /* calendar view */

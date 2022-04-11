@@ -4,6 +4,16 @@ body{
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
+@media only screen and (max-width: 900px) {
+  .landing-page #description{
+    font-size: 1.5em;
+    padding-left: 15%;
+  }
+  .landing-page .fourth{
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
 
 /* Bordered form */
 .landing-page{

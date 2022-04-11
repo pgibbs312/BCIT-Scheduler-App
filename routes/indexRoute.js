@@ -14,7 +14,7 @@ router.get("/home", ensureAuthenticated, (req, res) => {
     const d = new Date();
     let year = d.getFullYear()
     let month = '0' + (d.getMonth() + 1)
-    let day = '0' + d.getDate()
+    let day = d.getDate()
     let searchDate = `${year}-${month}-${day}`
     console.log(searchDate)
     Booking.find({date: searchDate})
