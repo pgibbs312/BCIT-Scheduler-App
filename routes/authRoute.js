@@ -34,7 +34,7 @@ router.post("/register", (req, res) => {
                 });
                 user.save()
                     .then((result) => {
-                        req.flash('message', `Successfully registered new account! Try logging in now.`)
+                        req.flash('message', `Successfully registered new account!`)
                         res.redirect("/auth/login/home")
                     })
                     .catch((err) => {

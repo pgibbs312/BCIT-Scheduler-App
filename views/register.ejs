@@ -11,8 +11,12 @@
 
 <body>
     <div class="landing-page">
-        <img class="logo" src="../BCIT_logo.png" alt="bcit logo">
-        <h1> Register</h1>
+        <div class="heading">
+            <img class="logo" src="../BCIT_logo.png" alt="bcit logo">
+
+            <h1 id="description"> Register</h1>
+        </div>
+
         <form action="/auth/register" method="POST">
 
             <div class="container">
@@ -38,14 +42,18 @@
                     <button id="register-btn" type="submit">Register</button>
                     <!-- <button id="cancel-btn" type="submit" >Cancel</button> -->
                 </div>
+                
             </div>
-            <div>
-                <strong id="rgstrPopupMessage" class="popupMsg">
+            <div class="msgBox">
+                <strong id="rgstrPopupMessage" class="popupMsgReg">
                     <em>
                         <%=message%>
                     </em>
                 </strong>
             </div>
+        </form>
+        <form action="/" method="GET" id="cancelBtn">
+            <button>Cancel</button>
         </form>
     </div>
 </body>

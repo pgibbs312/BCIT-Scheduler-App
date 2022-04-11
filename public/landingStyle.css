@@ -268,3 +268,17 @@ form {
       width: 100%;
     }
   }
+
+  .popupMsg{
+    background-color: #fff;
+    margin-left: 25%;
+  }
+  .msgBox{
+    background-color: #fff;
+  }
+  .popupMsgReg{
+    background-color: #fff;
+  }
+  #cancelBtn{
+    background-color: #fff;
+  }

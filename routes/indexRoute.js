@@ -147,7 +147,7 @@ router.post("/book", (req, res) => {
 
                     room.save()
                         .then((result) => {
-                            res.redirect(`/home`);
+                            res.redirect(`/home/date?date=${req.body.date}`);
                         })
                         .catch((error) => {
                             console.log(error);
