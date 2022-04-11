@@ -1,14 +1,13 @@
-FROM ubuntu:18.04
+FROM node:16
 LABEL maintainer="CIT Computing"
 
-WORKDIR /app
-COPY ./* /app
+WORKDIR /usr/src/app
+COPY package*.json ./
 
-RUN apt update
-RUN apt install nodejs -y
-RUN apt install npm -y
+RUN npm install
 
+COPY . .
 
-
+EXPOSE 80
 CMD ["node", "server.js"]
 
